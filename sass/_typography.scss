@@ -1,0 +1,115 @@
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic|Montserrat:400,700);
+h1, h2, h3, h4, h5, h6 {
+  @include headline;
+}
+h1 {
+  font-size: em(30);
+}
+h2 {
+  font-size: em(24);
+}
+h3 {
+  font-size: em(20);
+}
+h4 {
+  font-size: em(18);
+}
+h5 {
+  font-size: em(16);
+}
+h6 {
+  font-size: em(14);
+}
+p, a {
+  @include copy-text;
+}
+.site-title {
+  text-transform: uppercase;
+  text-decoration: none;
+  a {
+    text-decoration: none;
+    @include header-text;
+  }
+}
+.site-description {
+  @include copy-text;
+  font-size: em(20);
+  color: $dark-gray;
+  font-style: italic;
+}
+.entry-title {
+  text-transform: uppercase;
+  text-decoration: none;
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
+  @include large-text;
+  a {
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    color: $black;
+    &:visited {
+      color: $black;
+    }
+    &:hover {
+      color: $dark-gray;
+    }
+  }
+}
+.entry-content p {
+  line-height: 2;
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.entry-meta p, .entry-meta a, .entry-meta span {
+  @include meta-text;
+}
+blockquote {
+  @include meta-text;
+  font-style: italic;
+  margin-bottom: em(30);
+  padding: em(30) em(30) em(10) em(30);
+  line-height: 1.45;
+  position: relative;
+  color: #FFF;
+  border-left:5px solid $black;
+  background: $primary-brand-color;
+  text-align: center;
+  p {
+    @include meta-text;
+    font-size: em(18);
+    color: $black;
+  }
+}
+
+blockquote cite {
+  color: $dark-gray;
+  font-size: 14px;
+  display: block;
+  margin-top: 5px;
+}
+ 
+blockquote cite:before {
+  content: "\2014 \2009";
+}
+table {
+  padding: em(10);
+}
+thead {
+  background-color: $dark-gray;
+  th {
+    padding: em(5);
+  }
+}
+td {
+  border-left: 1px solid $dark-gray;
+}
+dl, dt, dd {
+  @include copy-text;
+} 
+dd {
+  font-style: italic;
+}
+li{
+  @include copy-text;
+}

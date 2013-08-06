@@ -1,0 +1,69 @@
+$black: #000;
+$white: #fff;
+$gray: #ccc;
+$dark-gray: #7B8A90;
+$primary-brand-color: #D9B54B;
+$secondary-brand-color: #79B250;
+
+
+/* =Grid
+----------------------------------------------- */
+$total-columns: 10;
+$max-width: em(960); // Max-width of the outer container
+
+@mixin headline {
+  font: {
+    family: 'Montserrat';
+  }
+  color: $black;
+}
+@mixin header-text {
+  font: {
+    family: 'Montserrat';
+    size: em(50);
+  }
+  color: $black;
+}
+@mixin large-text {
+  font: {
+    family: 'Montserrat';
+    size: em(50);
+  }
+  color: $black;
+}
+
+@mixin copy-text {
+  font: {
+    family: 'Droid Serif';
+    size: em(18);
+  }
+  color: $black;
+}
+
+@mixin meta-text {
+  font: {
+    family: 'Montserrat';
+    size: em(14);
+  }
+  color: $dark-gray;
+}
+
+@mixin tags {
+  border: 1px solid $gray;
+  border-left: 3px solid $primary-brand-color;
+  border-radius: 4px;
+  padding: em(5);
+  margin-right: em(10);
+  text-decoration: none;
+  &:hover {
+    color: $primary-brand-color;
+  }
+}
+@mixin cats {
+  @include tags; 
+  border-left: 3px solid $secondary-brand-color;
+}
+@mixin wrap {
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
+}
