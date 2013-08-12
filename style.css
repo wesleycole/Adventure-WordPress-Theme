@@ -2360,33 +2360,49 @@ blockquote cite:before {
 /* line 95, sass/_typography.scss */
 table {
   padding: 0.625em; }
+  /* line 97, sass/_typography.scss */
+  table thead {
+    background-color: #7b8a90; }
+    /* line 99, sass/_typography.scss */
+    table thead th {
+      padding: 0.3125em; }
+  /* line 103, sass/_typography.scss */
+  table td {
+    border-bottom: 1px solid #7b8a90;
+    border-left: 1px solid #7b8a90;
+    padding: 0.625em; }
+    /* line 107, sass/_typography.scss */
+    table td:last-child {
+      border-right: 1px solid #7b8a90; }
 
-/* line 98, sass/_typography.scss */
-thead {
-  background-color: #7b8a90; }
-  /* line 100, sass/_typography.scss */
-  thead th {
-    padding: 0.3125em; }
-
-/* line 104, sass/_typography.scss */
-td {
-  border-left: 1px solid #7b8a90; }
-
-/* line 107, sass/_typography.scss */
+/* line 113, sass/_typography.scss */
 dl, dt, dd {
   font-family: 'Droid Serif';
   font-size: 1.125em;
   color: black; }
 
-/* line 110, sass/_typography.scss */
+/* line 116, sass/_typography.scss */
 dd {
   font-style: italic; }
 
-/* line 113, sass/_typography.scss */
-li {
+/* line 119, sass/_typography.scss */
+ol ol li, ul ul li {
+  font-size: 1em; }
+
+/* line 122, sass/_typography.scss */
+li, li span {
   font-family: 'Droid Serif';
   font-size: 1.125em;
   color: black; }
+
+/* line 125, sass/_typography.scss */
+address {
+  font-style: italic; }
+
+/* line 128, sass/_typography.scss */
+code, kbd, tt, var {
+  background-color: #eeeeee;
+  padding: 0.3125em; }
 
 /* line 4, sass/_header.scss */
 .site-branding {
@@ -2483,11 +2499,11 @@ li {
   max-width: 60em;
   margin-left: auto;
   margin-right: auto; }
-  /* line 18, ../../../../../../Treebook-App/CodeKit.app/Contents/Resources/engines/bourbon/bourbon/app/assets/stylesheets/addons/_clearfix.scss */
+  /* line 18, ../../../../../../../Users/wesleycole/Treebook-App/CodeKit.app/Contents/Resources/engines/bourbon/bourbon/app/assets/stylesheets/addons/_clearfix.scss */
   #main:before, #main:after {
     content: " ";
     display: table; }
-  /* line 23, ../../../../../../Treebook-App/CodeKit.app/Contents/Resources/engines/bourbon/bourbon/app/assets/stylesheets/addons/_clearfix.scss */
+  /* line 23, ../../../../../../../Users/wesleycole/Treebook-App/CodeKit.app/Contents/Resources/engines/bourbon/bourbon/app/assets/stylesheets/addons/_clearfix.scss */
   #main:after {
     clear: both; }
 
@@ -2503,11 +2519,11 @@ li {
   margin-left: auto;
   margin-right: auto;
   border-bottom: 1px solid #cccccc; }
-  /* line 18, ../../../../../../Treebook-App/CodeKit.app/Contents/Resources/engines/bourbon/bourbon/app/assets/stylesheets/addons/_clearfix.scss */
+  /* line 18, ../../../../../../../Users/wesleycole/Treebook-App/CodeKit.app/Contents/Resources/engines/bourbon/bourbon/app/assets/stylesheets/addons/_clearfix.scss */
   #content:before, #content:after {
     content: " ";
     display: table; }
-  /* line 23, ../../../../../../Treebook-App/CodeKit.app/Contents/Resources/engines/bourbon/bourbon/app/assets/stylesheets/addons/_clearfix.scss */
+  /* line 23, ../../../../../../../Users/wesleycole/Treebook-App/CodeKit.app/Contents/Resources/engines/bourbon/bourbon/app/assets/stylesheets/addons/_clearfix.scss */
   #content:after {
     clear: both; }
   /* line 13, sass/_content.scss */
@@ -2556,43 +2572,11 @@ li {
 /* line 49, sass/_content.scss */
 .entry-meta .comments-link {
   float: right; }
-/* line 52, sass/_content.scss */
-.entry-meta .tags-links a {
-  border: 1px solid #cccccc;
-  border-left: 3px solid #d9b54b;
-  border-radius: 4px;
-  padding: 0.3125em;
-  margin-right: 0.625em;
-  text-decoration: none; }
-  /* line 58, sass/_vars.scss */
-  .entry-meta .tags-links a:hover {
-    color: #d9b54b; }
-/* line 55, sass/_content.scss */
-.entry-meta .cat-links a {
-  border: 1px solid #cccccc;
-  border-left: 3px solid #d9b54b;
-  border-radius: 4px;
-  padding: 0.3125em;
-  margin-right: 0.625em;
-  text-decoration: none;
-  border-left: 3px solid #79b250; }
-  /* line 58, sass/_vars.scss */
-  .entry-meta .cat-links a:hover {
-    color: #d9b54b; }
 
-/* line 59, sass/_content.scss */
+/* line 53, sass/_content.scss */
 .tag .page-title {
-  border: 1px solid #cccccc;
-  border-left: 3px solid #d9b54b;
-  border-radius: 4px;
-  padding: 0.3125em;
-  margin-right: 0.625em;
-  text-decoration: none;
   display: inline;
   border-left: 5px solid #d9b54b; }
-  /* line 58, sass/_vars.scss */
-  .tag .page-title:hover {
-    color: #d9b54b; }
 
 /* =Asides
 ----------------------------------------------- */

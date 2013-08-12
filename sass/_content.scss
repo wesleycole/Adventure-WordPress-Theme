@@ -49,15 +49,8 @@
   .comments-link {
     float: right;
   }
-  .tags-links a {
-    @include tags;
-  }
-  .cat-links a {
-    @include cats;
-  }
 }
 .tag .page-title {
-  @include tags;
   display: inline;
   border-left: 5px solid $primary-brand-color;
 }

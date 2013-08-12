@@ -64,7 +64,7 @@ p, a {
 .entry-meta p, .entry-meta a, .entry-meta span {
   @include meta-text;
 }
-blockquote {
+blockquote, {
   @include meta-text;
   font-style: italic;
   margin-bottom: em(30);
@@ -94,22 +94,39 @@ blockquote cite:before {
 }
 table {
   padding: em(10);
-}
-thead {
-  background-color: $dark-gray;
-  th {
-    padding: em(5);
+  thead {
+    background-color: $dark-gray;
+    th {
+      padding: em(5);
+    }
+  }
+  td {
+    border-bottom: 1px solid $dark-gray;
+    border-left: 1px solid $dark-gray;
+    padding: em(10);
+    &:last-child {
+      border-right: 1px solid $dark-gray;
+    }
   }
 }
-td {
-  border-left: 1px solid $dark-gray;
-}
+
 dl, dt, dd {
   @include copy-text;
 } 
 dd {
   font-style: italic;
 }
-li{
+ol ol li, ul ul li {
+  font-size: 1em;
+}
+li, li span {
   @include copy-text;
 }
+address {
+  font-style: italic;
+}
+code, kbd, tt, var {
+  background-color: $light-gray;
+  padding: em(5);
+}
+
