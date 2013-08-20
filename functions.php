@@ -82,12 +82,25 @@ add_action( 'widgets_init', 'flatness_factor_widgets_init' );
 /**
  * Enqueue scripts and styles
  */
+
+if (!is_admin()) add_action("wp_enqueue_scripts", "my_jquery_enqueue", 11);
+function my_jquery_enqueue() {
+   wp_deregister_script('jquery');
+   wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js", false, null);
+   wp_enqueue_script('jquery', '', '', array(), '20130819', true );
+}
+
 function flatness_factor_scripts() {
 	wp_enqueue_style( 'flatness_factor-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'flatness_factor-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
 	wp_enqueue_script( 'flatness_factor-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	
+	wp_enqueue_script( 'flatness_factor_jqslide', get_template_directory_uri() . '/js/jquery.pageslide.min.js', array( 'jquery' ), '20130817', true );
+
+	wp_enqueue_script( 'flatness_factor_main', get_template_directory_uri() . '/js/main.js', array( 'jquery' ), '20130817', true );
+	
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -98,6 +111,31 @@ function flatness_factor_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'flatness_factor_scripts' );
+
+function add_pageslide_script() {?>
+	<script>
+	    $(".menu-toggle").pageslide({ direction: "right", modal: true });
+	</script>
+<?php }
+
+add_action( 'wp_footer', 'add_pageslide_script', 100 );
+
+function theme_styles()  
+{ 
+  // Register the style like this for a theme:  
+  // (First the unique name for the style (custom-style) then the src, 
+  // then dependencies and ver no. and media type)
+  wp_register_style( 'pageslide-style', 
+    get_template_directory_uri() . '/vendor_css/jquery.pageslide.css', 
+    array(), 
+    '20120208', 
+    'all' );
+
+  // enqueing:
+  wp_enqueue_style( 'pageslide-style' );
+}
+add_action('wp_enqueue_scripts', 'theme_styles');
+
 
 /**
  * Implement the Custom Header feature.

@@ -48,6 +48,14 @@ $max-width: em(960); // Max-width of the outer container
   }
   color: $dark-gray;
 }
+
+@mixin menu-text {
+  font: {
+    family: 'Montserrat';
+    size: em(16);
+  }
+  color: $white;
+}
 @mixin wrap {
   -ms-word-wrap: break-word;
   word-wrap: break-word;
