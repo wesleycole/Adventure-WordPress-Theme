@@ -136,6 +136,16 @@ function theme_styles()
 }
 add_action('wp_enqueue_scripts', 'theme_styles');
 
+class Arrow_Walker_Nav_Menu extends Walker_Nav_Menu {
+    function display_element($element, &$children_elements, $max_depth, $depth=0, $args, &$output) {
+        $id_field = $this->db_fields['id'];
+        if (!empty($children_elements[$element->$id_field])) {
+            $element->classes[] = 'has-submenu'; //CSS classname here
+            $element->title .= '<i class="icon-chevron-down"></i>'; //append html here
+        }
+        Walker_Nav_Menu::display_element($element, $children_elements, $max_depth, $depth, $args, $output);
+    }
+}
 
 /**
  * Implement the Custom Header feature.

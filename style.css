@@ -2427,52 +2427,71 @@ code, kbd, tt, var {
 ----------------------------------------------- */
 /* line 3, sass/_menu.scss */
 .nav-title {
-  background: #7b8a90;
-  height: 5em; }
-  /* line 6, sass/_menu.scss */
+  background: #7b8a90; }
+  /* line 5, sass/_menu.scss */
   .nav-title h2 {
+    text-align: center;
     color: white;
-    display: block;
-    text-align: center; }
-  /* line 11, sass/_menu.scss */
+    padding-bottom: 1em; }
+  /* line 10, sass/_menu.scss */
   .nav-title a {
-    display: inline;
     float: right;
+    padding: 0.625em 0.9375em 0 0;
+    color: white;
     text-decoration: none;
-    color: white;
     font-family: 'Montserrat';
-    font-size: 1em;
+    font-size: 1.0625em;
     color: white;
-    margin-right: 1.25em; }
+    font-size: 0.75em; }
+    /* line 17, sass/_menu.scss */
+    .nav-title a:hover {
+      color: #d9b54b; }
 
-/* line 20, sass/_menu.scss */
-.menu-toggle {
-  text-decoration: none;
-  position: relative;
-  top: 1.25em;
-  left: 2.5em; }
-
-/* line 26, sass/_menu.scss */
+/* line 22, sass/_menu.scss */
 .menu {
-  list-style-type: none;
-  margin: 0; }
-  /* line 29, sass/_menu.scss */
+  list-style: none;
+  margin: 0;
+  padding: 0.9375em; }
+  /* line 26, sass/_menu.scss */
   .menu li {
-    width: 100%;
-    padding: 0.3125em 0 0 1.25em; }
-    /* line 32, sass/_menu.scss */
-    .menu li:hover {
-      background: #d9b54b; }
-  /* line 36, sass/_menu.scss */
+    position: relative;
+    padding-bottom: 0.9375em;
+    font-family: 'Montserrat';
+    font-size: 1.0625em;
+    color: white; }
+    /* line 30, sass/_menu.scss */
+    .menu li:hover > a {
+      color: #d9b54b; }
+  /* line 34, sass/_menu.scss */
   .menu a {
+    display: block;
     text-decoration: none;
     font-family: 'Montserrat';
-    font-size: 1em;
-    color: white;
+    font-size: 1.0625em;
     color: white; }
-  /* line 41, sass/_menu.scss */
-  .menu .sub-menu {
-    list-style-type: none; }
+    /* line 38, sass/_menu.scss */
+    .menu a i {
+      padding-left: 0.625em; }
+  /* line 42, sass/_menu.scss */
+  .menu ul ul {
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+    display: none;
+    float: left;
+    position: absolute;
+    top: 1.5em;
+    left: 0;
+    z-index: 99999; }
+  /* line 51, sass/_menu.scss */
+  .menu ul ul ul {
+    left: 100%;
+    top: 0; }
+  /* line 55, sass/_menu.scss */
+  .menu ul ul a {
+    width: 200px; }
+
+/* line 67, sass/_menu.scss */
+.main-navigation ul li:hover > ul {
+  display: block; }
 
 /* =Content
 ----------------------------------------------- */

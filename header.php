@@ -20,12 +20,10 @@
 <body <?php body_class(); ?>>
 	<div id="nav" style="display:none">
 	  <div class="nav-title">  
-	  	<a href="javascript:$.pageslide.close()">X</a>
-	    <div class="title">
-	    	<h2>Menu</h2>
-	    </div>
+	  	<a href="javascript:$.pageslide.close()">close</a>
+	    <h2>Menu</h2>
 	  </div>
-	  <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+	  <?php wp_nav_menu( array( 'theme_location' => 'primary', 'walker' => new Arrow_Walker_Nav_Menu() ) ); ?>
 	</div>	
 <div id="page" class="hfeed site">
 	<?php do_action( 'before' ); ?>

@@ -2,43 +2,71 @@
 ----------------------------------------------- */
 .nav-title {
   background: $dark-gray;
-  height: em(80);
   h2 {
-    color: $white;
-    display: block;
     text-align: center;
+    color: $white;
+    padding-bottom: 1em;
   }
   a {
-    display: inline;
     float: right;
-    text-decoration: none;
+    padding: em(10) em(15) 0 0;
     color: $white;
+    text-decoration: none;
     @include menu-text;
-    margin-right: em(20);
+    font-size: em(12);
+    &:hover {
+      color: $primary-brand-color;
+    }
   }
 }
-.menu-toggle {
-  text-decoration: none;
-  position: relative;
-  top: em(20);
-  left: em(40);
-}
 .menu {
-  list-style-type: none;
+  list-style: none;
   margin: 0;
+  padding: em(15);
   li {
-    width: 100%;
-    padding: em(5) 0 0 em(20);
-    &:hover {
-      background: $primary-brand-color;
+    position: relative;
+    padding-bottom: em(15);
+    @include menu-text;
+    &:hover > a {
+      color: $primary-brand-color;
     }
   }
   a {
+    display: block;
     text-decoration: none;
     @include menu-text;
-    color: $white;
+    i {
+      padding-left: em(10);
+    }
   }
-  .sub-menu {
-    list-style-type: none;
+  ul ul {
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+    display: none;
+    float: left;
+    position: absolute;
+      top: 1.5em;
+      left: 0;
+    z-index: 99999;
   }
+  ul ul ul {
+    left: 100%;
+    top: 0;
+  }
+  ul ul a {
+    width: 200px;
+  }
+}
+.main-navigation ul ul li {
+}
+.main-navigation li:hover > a {
+}
+.main-navigation ul ul :hover > a {
+}
+.main-navigation ul ul a:hover {
+}
+.main-navigation ul li:hover > ul {
+  display: block;
+}
+.main-navigation li.current_page_item a,
+.main-navigation li.current-menu-item a {
 }
