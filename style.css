@@ -2426,14 +2426,27 @@ code, kbd, tt, var {
 /* =Menu
 ----------------------------------------------- */
 /* line 3, sass/_menu.scss */
-.nav-title {
-  background: #7b8a90; }
+nav {
+  margin-top: 0.9375em; }
   /* line 5, sass/_menu.scss */
+  nav a {
+    border-right: 1px solid #d9b54b;
+    padding-right: 0.625em;
+    text-decoration: none; }
+  /* line 10, sass/_menu.scss */
+  nav i {
+    font-size: 1.25em;
+    padding-left: 0.625em; }
+
+/* line 15, sass/_menu.scss */
+.nav-title {
+  background: black; }
+  /* line 17, sass/_menu.scss */
   .nav-title h2 {
     text-align: center;
     color: white;
     padding-bottom: 1em; }
-  /* line 10, sass/_menu.scss */
+  /* line 22, sass/_menu.scss */
   .nav-title a {
     float: right;
     padding: 0.625em 0.9375em 0 0;
@@ -2443,55 +2456,70 @@ code, kbd, tt, var {
     font-size: 1.0625em;
     color: white;
     font-size: 0.75em; }
-    /* line 17, sass/_menu.scss */
+    /* line 29, sass/_menu.scss */
     .nav-title a:hover {
       color: #d9b54b; }
 
-/* line 22, sass/_menu.scss */
+/* line 34, sass/_menu.scss */
 .menu {
   list-style: none;
   margin: 0;
-  padding: 0.9375em; }
-  /* line 26, sass/_menu.scss */
+  padding: 1.25em; }
+  /* line 38, sass/_menu.scss */
   .menu li {
     position: relative;
-    padding-bottom: 0.9375em;
+    padding-bottom: 0.625em;
     font-family: 'Montserrat';
     font-size: 1.0625em;
     color: white; }
-    /* line 30, sass/_menu.scss */
+    /* line 42, sass/_menu.scss */
     .menu li:hover > a {
       color: #d9b54b; }
-  /* line 34, sass/_menu.scss */
+    /* line 45, sass/_menu.scss */
+    .menu li:hover ul {
+      display: block; }
+    /* line 48, sass/_menu.scss */
+    .menu li ul {
+      position: relative;
+      top: 0;
+      display: none;
+      margin: 0 0.3125em 0 0.3125em;
+      padding: 0.625em;
+      background: #97a3a7;
+      -webkit-transition: all 2s ease-in-out;
+      -moz-transition: all 2s ease-in-out;
+      transition: all 2s ease-in-out; }
+      /* line 56, sass/_menu.scss */
+      .menu li ul li {
+        list-style-type: none; }
+    /* line 60, sass/_menu.scss */
+    .menu li ul ul {
+      position: relative;
+      top: 0;
+      display: none; }
+  /* line 66, sass/_menu.scss */
   .menu a {
     display: block;
     text-decoration: none;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
     font-family: 'Montserrat';
     font-size: 1.0625em;
     color: white; }
-    /* line 38, sass/_menu.scss */
+    /* line 71, sass/_menu.scss */
     .menu a i {
-      padding-left: 0.625em; }
-  /* line 42, sass/_menu.scss */
-  .menu ul ul {
-    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-    display: none;
-    float: left;
-    position: absolute;
-    top: 1.5em;
-    left: 0;
-    z-index: 99999; }
-  /* line 51, sass/_menu.scss */
-  .menu ul ul ul {
-    left: 100%;
-    top: 0; }
-  /* line 55, sass/_menu.scss */
-  .menu ul ul a {
-    width: 200px; }
+      padding-left: 0.625em;
+      color: #d9b54b; }
 
-/* line 67, sass/_menu.scss */
+/* line 83, sass/_menu.scss */
 .main-navigation ul li:hover > ul {
   display: block; }
+
+/* line 87, sass/_menu.scss */
+.menu li.current_page_item a,
+.menu li.current-menu-item a {
+  color: black; }
 
 /* =Content
 ----------------------------------------------- */
@@ -2520,6 +2548,7 @@ code, kbd, tt, var {
   max-width: 60em;
   margin-left: auto;
   margin-right: auto;
+  max-width: 50em;
   border-bottom: 1px solid #cccccc; }
   /* line 18, ../../../../../../../Users/wesleycole/Treebook-App/CodeKit.app/Contents/Resources/engines/bourbon/bourbon/app/assets/stylesheets/addons/_clearfix.scss */
   #content:before, #content:after {
@@ -2528,7 +2557,7 @@ code, kbd, tt, var {
   /* line 23, ../../../../../../../Users/wesleycole/Treebook-App/CodeKit.app/Contents/Resources/engines/bourbon/bourbon/app/assets/stylesheets/addons/_clearfix.scss */
   #content:after {
     clear: both; }
-  /* line 13, sass/_content.scss */
+  /* line 14, sass/_content.scss */
   #content p.half {
     display: block;
     float: left;
@@ -2540,42 +2569,42 @@ code, kbd, tt, var {
     #content p.half:last-child {
       margin-right: 0; }
 
-/* line 21, sass/_content.scss */
+/* line 22, sass/_content.scss */
 .sticky {
   border: 1px solid #cccccc;
   border-left: 5px solid #d9b54b;
   border-radius: 4px;
   padding: 1.25em; }
 
-/* line 28, sass/_content.scss */
+/* line 29, sass/_content.scss */
 .hentry {
   margin: 5em 0 1.5em;
   padding-bottom: 1.875em;
   border-bottom: 1px solid #ccc; }
-  /* line 32, sass/_content.scss */
+  /* line 33, sass/_content.scss */
   .hentry:last-child {
     border-bottom: none; }
 
-/* line 37, sass/_content.scss */
+/* line 38, sass/_content.scss */
 .byline,
 .updated {
   display: none; }
 
-/* line 41, sass/_content.scss */
+/* line 42, sass/_content.scss */
 .single .byline,
 .group-blog .byline {
   display: inline; }
 
-/* line 44, sass/_content.scss */
+/* line 45, sass/_content.scss */
 .page-links {
   clear: both;
   margin: 0 0 1.5em; }
 
-/* line 49, sass/_content.scss */
+/* line 50, sass/_content.scss */
 .entry-meta .comments-link {
   float: right; }
 
-/* line 53, sass/_content.scss */
+/* line 54, sass/_content.scss */
 .tag .page-title {
   display: inline;
   border-left: 5px solid #d9b54b; }

@@ -9,6 +9,7 @@
 }
 #content {
   @include outer-container;
+  max-width: 50em;
   border-bottom: 1px solid $gray;
   p.half {
     @include span-columns(6);
