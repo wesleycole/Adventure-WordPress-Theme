@@ -148,6 +148,13 @@ class Arrow_Walker_Nav_Menu extends Walker_Nav_Menu {
 }
 
 /**
+ * Add Featured Image Support
+ */
+
+add_theme_support('post-thumbnails');
+set_post_thumbnail_size( 150, 150 );
+
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';

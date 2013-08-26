@@ -2569,42 +2569,52 @@ nav {
     #content p.half:last-child {
       margin-right: 0; }
 
-/* line 22, sass/_content.scss */
+/* line 20, sass/_content.scss */
 .sticky {
   border: 1px solid #cccccc;
   border-left: 5px solid #d9b54b;
   border-radius: 4px;
   padding: 1.25em; }
 
-/* line 29, sass/_content.scss */
+/* line 27, sass/_content.scss */
 .hentry {
   margin: 5em 0 1.5em;
   padding-bottom: 1.875em;
   border-bottom: 1px solid #ccc; }
-  /* line 33, sass/_content.scss */
+  /* line 31, sass/_content.scss */
   .hentry:last-child {
     border-bottom: none; }
 
-/* line 38, sass/_content.scss */
+/* line 36, sass/_content.scss */
+.entry-header .wp-post-image {
+  display: inline-block;
+  padding-right: 0.3125em; }
+/* line 40, sass/_content.scss */
+.entry-header .entry-title {
+  display: inline-block;
+  padding-top: 0.0625em;
+  vertical-align: top; }
+
+/* line 47, sass/_content.scss */
 .byline,
 .updated {
   display: none; }
 
-/* line 42, sass/_content.scss */
+/* line 51, sass/_content.scss */
 .single .byline,
 .group-blog .byline {
   display: inline; }
 
-/* line 45, sass/_content.scss */
+/* line 54, sass/_content.scss */
 .page-links {
   clear: both;
   margin: 0 0 1.5em; }
 
-/* line 50, sass/_content.scss */
+/* line 59, sass/_content.scss */
 .entry-meta .comments-link {
   float: right; }
 
-/* line 54, sass/_content.scss */
+/* line 63, sass/_content.scss */
 .tag .page-title {
   display: inline;
   border-left: 5px solid #d9b54b; }

@@ -17,8 +17,6 @@
     margin-right: 0;
   }
 }
-
-
 .sticky {
   border: 1px solid $gray;
   border-left: 5px solid $primary-brand-color;
@@ -32,6 +30,17 @@
   border-bottom: 1px solid #ccc;
   &:last-child {
     border-bottom: none;
+  }
+}
+.entry-header {
+  .wp-post-image {
+    display: inline-block;
+    padding-right: em(5);
+  }
+  .entry-title {
+    display: inline-block;
+    padding-top: em(1);
+    vertical-align: top;
   }
 }
 .byline,
