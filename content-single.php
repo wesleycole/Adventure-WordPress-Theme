@@ -1,6 +1,6 @@
 <?php
 /**
- * @package flatness_factor
+ * @package adventure
  */
 ?>
 
@@ -8,21 +8,22 @@
 	<header class="entry-header">
 		<?php 
 		if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-		  the_post_thumbnail();
+		  the_post_thumbnail('thumbnail');
 		} 
 		?>
-		<h1 class="entry-title"><?php the_title(); ?></h1>
-
-		<div class="entry-meta">
-			<?php flatness_factor_posted_on(); ?>
-		</div><!-- .entry-meta -->
+		<div class="entry-header-info">
+			<h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+			<div class="meta">
+				<p><span class="author"><i class="icon-user"></i> <?php the_author() ?></span><span class="date"><i class="icon-calendar"></i> <?php the_date(); ?></span></p>
+			</div>
+		</div>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'flatness_factor' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'adventure' ),
 				'after'  => '</div>',
 			) );
 		?>
@@ -31,25 +32,25 @@
 	<footer class="entry-meta">
 		<?php
 			/* translators: used between list items, there is a space after the comma */
-			$category_list = get_the_category_list( __( ', ', 'flatness_factor' ) );
+			$category_list = get_the_category_list( __( ', ', 'adventure' ) );
 
 			/* translators: used between list items, there is a space after the comma */
-			$tag_list = get_the_tag_list( '', __( ', ', 'flatness_factor' ) );
+			$tag_list = get_the_tag_list( '', __( ', ', 'adventure' ) );
 
-			if ( ! flatness_factor_categorized_blog() ) {
+			if ( ! adventure_categorized_blog() ) {
 				// This blog only has 1 category so we just need to worry about tags in the meta text
 				if ( '' != $tag_list ) {
-					$meta_text = __( 'This entry was tagged %2$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'flatness_factor' );
+					$meta_text = __( 'This entry was tagged %2$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'adventure' );
 				} else {
-					$meta_text = __( 'Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'flatness_factor' );
+					$meta_text = __( 'Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'adventure' );
 				}
 
 			} else {
 				// But this blog has loads of categories so we should probably display them here
 				if ( '' != $tag_list ) {
-					$meta_text = __( 'This entry was posted in %1$s and tagged %2$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'flatness_factor' );
+					$meta_text = __( 'This entry was posted in %1$s and tagged %2$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'adventure' );
 				} else {
-					$meta_text = __( 'This entry was posted in %1$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'flatness_factor' );
+					$meta_text = __( 'This entry was posted in %1$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'adventure' );
 				}
 
 			} // end check for categories on this blog
@@ -63,6 +64,6 @@
 			);
 		?>
 
-		<?php edit_post_link( __( 'Edit', 'flatness_factor' ), '<span class="edit-link">', '</span>' ); ?>
+		<?php edit_post_link( __( 'Edit', 'adventure' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-meta -->
 </article><!-- #post-## -->

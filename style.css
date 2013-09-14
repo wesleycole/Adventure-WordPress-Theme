@@ -1,6 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic|Montserrat:400,700);
 /*
-Theme Name: flatness_factor
+Theme Name: adventure
 Theme URI: http://underscores.me/
 Author: Underscores.me
 Author URI: http://underscores.me/
@@ -13,7 +13,7 @@ Tags:
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
- flatness_factor is based on Underscores http://underscores.me/, (C) 2012-2013 Automattic, Inc.
+ adventure is based on Underscores http://underscores.me/, (C) 2012-2013 Automattic, Inc.
 
 Resetting and rebuilding styles have been helped along thanks to the fine work of
 Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
@@ -461,7 +461,7 @@ a:active {
 [class*="site"]:after {
   clear: both; }
 
-/*
+/*!
  *  Font Awesome 3.2.1
  *  the iconic font designed for Bootstrap
  *  ------------------------------------------------------------------------------
@@ -2236,95 +2236,123 @@ a .icon-rotate-90:before, a .icon-rotate-180:before, a .icon-rotate-270:before, 
 .icon-renren:before {
   content: "\f18b"; }
 
-/* line 2, sass/_typography.scss */
+/* Pulling in Google Fonts for Droid and Montserrat 
+--------------------------------------------------------------*/
+/* Typography Mixins
+--------------------------------------------------------------*/
+/* Base Font Styles 
+--------------------------------------------------------------*/
+/* line 59, sass/_typography.scss */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat';
   color: black; }
 
-/* line 5, sass/_typography.scss */
+/* line 62, sass/_typography.scss */
 h1 {
   font-size: 1.875em; }
 
-/* line 8, sass/_typography.scss */
+/* line 65, sass/_typography.scss */
 h2 {
   font-size: 1.5em; }
 
-/* line 11, sass/_typography.scss */
+/* line 68, sass/_typography.scss */
 h3 {
   font-size: 1.25em; }
 
-/* line 14, sass/_typography.scss */
+/* line 71, sass/_typography.scss */
 h4 {
   font-size: 1.125em; }
 
-/* line 17, sass/_typography.scss */
+/* line 74, sass/_typography.scss */
 h5 {
   font-size: 1em; }
 
-/* line 20, sass/_typography.scss */
+/* line 77, sass/_typography.scss */
 h6 {
   font-size: 0.875em; }
 
-/* line 23, sass/_typography.scss */
-p, a {
+/* line 80, sass/_typography.scss */
+p {
   font-family: 'Droid Serif';
-  font-size: 1.125em;
-  color: black; }
+  font-size: 1.125em; }
 
-/* line 26, sass/_typography.scss */
+/* line 83, sass/_typography.scss */
+a {
+  text-decoration: none;
+  color: #d9b54b; }
+  /* line 86, sass/_typography.scss */
+  a:hover {
+    color: #d9b54b;
+    border-bottom: 3px solid #d9b54b;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    transition: all 0.2s; }
+  /* line 91, sass/_typography.scss */
+  a:visited {
+    color: #d9b54b; }
+
+/* line 95, sass/_typography.scss */
+img:hover {
+  border-bottom: none; }
+
+/* line 99, sass/_typography.scss */
 .site-title {
   text-transform: uppercase;
   text-decoration: none; }
-  /* line 29, sass/_typography.scss */
+  /* line 102, sass/_typography.scss */
   .site-title a {
     text-decoration: none;
     font-family: 'Montserrat';
-    font-size: 3.125em;
-    color: black; }
+    font-size: 3.125em; }
+    /* line 105, sass/_typography.scss */
+    .site-title a:hover {
+      border-bottom: none; }
+    /* line 108, sass/_typography.scss */
+    .site-title a:visited {
+      color: black; }
 
-/* line 34, sass/_typography.scss */
+/* line 113, sass/_typography.scss */
 .site-description {
   font-family: 'Droid Serif';
   font-size: 1.125em;
-  color: black;
   font-size: 1.25em;
   color: #7b8a90;
   font-style: italic; }
 
-/* line 40, sass/_typography.scss */
+/* line 119, sass/_typography.scss */
 .entry-title {
   text-transform: uppercase;
   text-decoration: none;
   -ms-word-wrap: break-word;
   word-wrap: break-word;
   font-family: 'Montserrat';
-  font-size: 3.125em;
   color: black; }
-  /* line 46, sass/_typography.scss */
+  /* line 125, sass/_typography.scss */
   .entry-title a {
+    font-family: 'Montserrat';
+    color: black;
     text-decoration: none;
-    font-family: 'Montserrat', sans-serif;
     color: black; }
-    /* line 50, sass/_typography.scss */
+    /* line 129, sass/_typography.scss */
     .entry-title a:visited {
       color: black; }
-    /* line 53, sass/_typography.scss */
+    /* line 132, sass/_typography.scss */
     .entry-title a:hover {
       color: #7b8a90; }
 
-/* line 58, sass/_typography.scss */
+/* line 137, sass/_typography.scss */
 .entry-content p {
   line-height: 2;
   -ms-word-wrap: break-word;
   word-wrap: break-word; }
 
-/* line 64, sass/_typography.scss */
+/* line 143, sass/_typography.scss */
 .entry-meta p, .entry-meta a, .entry-meta span {
   font-family: 'Montserrat';
   font-size: 0.875em;
   color: #7b8a90; }
 
-/* line 67, sass/_typography.scss */
+/* line 146, sass/_typography.scss */
 blockquote {
   font-family: 'Montserrat';
   font-size: 0.875em;
@@ -2338,7 +2366,7 @@ blockquote {
   border-left: 5px solid black;
   background: #d9b54b;
   text-align: center; }
-  /* line 78, sass/_typography.scss */
+  /* line 157, sass/_typography.scss */
   blockquote p {
     font-family: 'Montserrat';
     font-size: 0.875em;
@@ -2346,63 +2374,122 @@ blockquote {
     font-size: 1.125em;
     color: black; }
 
-/* line 85, sass/_typography.scss */
+/* line 164, sass/_typography.scss */
 blockquote cite {
   color: #7b8a90;
   font-size: 14px;
   display: block;
   margin-top: 5px; }
 
-/* line 92, sass/_typography.scss */
+/* line 171, sass/_typography.scss */
 blockquote cite:before {
   content: "\2014 \2009"; }
 
-/* line 95, sass/_typography.scss */
+/* line 174, sass/_typography.scss */
 table {
   padding: 0.625em; }
-  /* line 97, sass/_typography.scss */
+  /* line 176, sass/_typography.scss */
   table thead {
     background-color: #7b8a90; }
-    /* line 99, sass/_typography.scss */
+    /* line 178, sass/_typography.scss */
     table thead th {
       padding: 0.3125em; }
-  /* line 103, sass/_typography.scss */
+  /* line 182, sass/_typography.scss */
   table td {
     border-bottom: 1px solid #7b8a90;
     border-left: 1px solid #7b8a90;
     padding: 0.625em; }
-    /* line 107, sass/_typography.scss */
+    /* line 186, sass/_typography.scss */
     table td:last-child {
       border-right: 1px solid #7b8a90; }
 
-/* line 113, sass/_typography.scss */
+/* line 192, sass/_typography.scss */
 dl, dt, dd {
   font-family: 'Droid Serif';
-  font-size: 1.125em;
-  color: black; }
+  font-size: 1.125em; }
 
-/* line 116, sass/_typography.scss */
+/* line 195, sass/_typography.scss */
 dd {
   font-style: italic; }
 
-/* line 119, sass/_typography.scss */
+/* line 198, sass/_typography.scss */
 ol ol li, ul ul li {
   font-size: 1em; }
 
-/* line 122, sass/_typography.scss */
+/* line 201, sass/_typography.scss */
 li, li span {
   font-family: 'Droid Serif';
-  font-size: 1.125em;
-  color: black; }
+  font-size: 1.125em; }
 
-/* line 125, sass/_typography.scss */
+/* line 204, sass/_typography.scss */
 address {
   font-style: italic; }
 
-/* line 128, sass/_typography.scss */
+/* line 207, sass/_typography.scss */
 code, kbd, tt, var {
   background-color: #eeeeee;
   padding: 0.3125em; }
+
+/* line 220, sass/_typography.scss */
+a.icon-twitter,
+a.icon-facebook,
+a.icon-google-plus-sign,
+a.icon-instagram,
+a.icon-github,
+a.icon-youtube-play,
+a.icon-linkedin-sign,
+a.icon-pinterest-sign {
+  color: black; }
+  /* line 222, sass/_typography.scss */
+  a.icon-twitter:visited,
+  a.icon-facebook:visited,
+  a.icon-google-plus-sign:visited,
+  a.icon-instagram:visited,
+  a.icon-github:visited,
+  a.icon-youtube-play:visited,
+  a.icon-linkedin-sign:visited,
+  a.icon-pinterest-sign:visited {
+    color: black; }
+
+/* line 226, sass/_typography.scss */
+a.icon-twitter:hover {
+  color: #00acee;
+  border-bottom: none; }
+
+/* line 230, sass/_typography.scss */
+a.icon-facebook:hover {
+  color: #3b5998;
+  border-bottom: none; }
+
+/* line 234, sass/_typography.scss */
+a.icon-google-plus-sign:hover {
+  color: #dd4b39;
+  border-bottom: none; }
+
+/* line 238, sass/_typography.scss */
+a.icon-instagram:hover {
+  color: #3f729b;
+  border-bottom: none; }
+
+/* line 242, sass/_typography.scss */
+a.icon-github:hover {
+  color: #171515;
+  border-bottom: none; }
+
+/* line 246, sass/_typography.scss */
+a.icon-youtube-play:hover {
+  color: #c4302b;
+  border-bottom: none; }
+
+/* line 250, sass/_typography.scss */
+a.icon-linkedin-sign:hover {
+  color: #0e76a8;
+  border-bottom: none; }
+
+/* line 254, sass/_typography.scss */
+a.icon-pinterest-sign:hover {
+  color: #c8232c;
+  border-bottom: none; }
 
 /* line 4, sass/_header.scss */
 .site-branding {
@@ -2415,9 +2502,10 @@ code, kbd, tt, var {
 .site-title {
   display: block;
   margin: 0 auto;
-  text-align: center; }
+  text-align: center;
+  line-height: 1.5em; }
 
-/* line 15, sass/_header.scss */
+/* line 16, sass/_header.scss */
 .site-description {
   display: block;
   margin: 0 auto;
@@ -2427,26 +2515,42 @@ code, kbd, tt, var {
 ----------------------------------------------- */
 /* line 3, sass/_menu.scss */
 nav {
-  margin-top: 0.9375em; }
+  margin-top: 0.3125em; }
   /* line 5, sass/_menu.scss */
   nav a {
-    border-right: 1px solid #d9b54b;
     padding-right: 0.625em;
     text-decoration: none; }
-  /* line 10, sass/_menu.scss */
+  /* line 9, sass/_menu.scss */
   nav i {
-    font-size: 1.25em;
-    padding-left: 0.625em; }
+    font-size: 1.25em; }
+  /* line 12, sass/_menu.scss */
+  nav .close:hover {
+    border-bottom: none; }
 
-/* line 15, sass/_menu.scss */
+/* line 17, sass/_menu.scss */
+nav.primary a {
+  color: white;
+  position: fixed;
+  margin-top: -10px;
+  background: #d9b54b;
+  padding: 0.625em 1.875em;
+  border-bottom: none; }
+  /* line 24, sass/_menu.scss */
+  nav.primary a:hover {
+    color: #7b8a90;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s; }
+
+/* line 30, sass/_menu.scss */
 .nav-title {
   background: black; }
-  /* line 17, sass/_menu.scss */
+  /* line 32, sass/_menu.scss */
   .nav-title h2 {
     text-align: center;
     color: white;
     padding-bottom: 1em; }
-  /* line 22, sass/_menu.scss */
+  /* line 37, sass/_menu.scss */
   .nav-title a {
     float: right;
     padding: 0.625em 0.9375em 0 0;
@@ -2456,29 +2560,31 @@ nav {
     font-size: 1.0625em;
     color: white;
     font-size: 0.75em; }
-    /* line 29, sass/_menu.scss */
+    /* line 44, sass/_menu.scss */
     .nav-title a:hover {
-      color: #d9b54b; }
+      color: #d9b54b;
+      border-bottom: none; }
 
-/* line 34, sass/_menu.scss */
+/* line 50, sass/_menu.scss */
 .menu {
   list-style: none;
   margin: 0;
   padding: 1.25em; }
-  /* line 38, sass/_menu.scss */
+  /* line 54, sass/_menu.scss */
   .menu li {
     position: relative;
     padding-bottom: 0.625em;
     font-family: 'Montserrat';
     font-size: 1.0625em;
     color: white; }
-    /* line 42, sass/_menu.scss */
+    /* line 58, sass/_menu.scss */
     .menu li:hover > a {
-      color: #d9b54b; }
-    /* line 45, sass/_menu.scss */
+      color: #d9b54b;
+      border-bottom: none; }
+    /* line 62, sass/_menu.scss */
     .menu li:hover ul {
       display: block; }
-    /* line 48, sass/_menu.scss */
+    /* line 65, sass/_menu.scss */
     .menu li ul {
       position: relative;
       top: 0;
@@ -2489,15 +2595,15 @@ nav {
       -webkit-transition: all 2s ease-in-out;
       -moz-transition: all 2s ease-in-out;
       transition: all 2s ease-in-out; }
-      /* line 56, sass/_menu.scss */
+      /* line 73, sass/_menu.scss */
       .menu li ul li {
         list-style-type: none; }
-    /* line 60, sass/_menu.scss */
+    /* line 77, sass/_menu.scss */
     .menu li ul ul {
       position: relative;
       top: 0;
       display: none; }
-  /* line 66, sass/_menu.scss */
+  /* line 83, sass/_menu.scss */
   .menu a {
     display: block;
     text-decoration: none;
@@ -2507,16 +2613,16 @@ nav {
     font-family: 'Montserrat';
     font-size: 1.0625em;
     color: white; }
-    /* line 71, sass/_menu.scss */
+    /* line 88, sass/_menu.scss */
     .menu a i {
       padding-left: 0.625em;
       color: #d9b54b; }
 
-/* line 83, sass/_menu.scss */
+/* line 100, sass/_menu.scss */
 .main-navigation ul li:hover > ul {
   display: block; }
 
-/* line 87, sass/_menu.scss */
+/* line 104, sass/_menu.scss */
 .menu li.current_page_item a,
 .menu li.current-menu-item a {
   color: black; }
@@ -2579,45 +2685,78 @@ nav {
 /* line 27, sass/_content.scss */
 .hentry {
   margin: 5em 0 1.5em;
-  padding-bottom: 1.875em;
+  padding: 1.25em;
+  background: white;
   border-bottom: 1px solid #ccc; }
-  /* line 31, sass/_content.scss */
+  /* line 32, sass/_content.scss */
   .hentry:last-child {
     border-bottom: none; }
 
-/* line 36, sass/_content.scss */
+/* line 37, sass/_content.scss */
 .entry-header .wp-post-image {
   display: inline-block;
-  padding-right: 0.3125em; }
-/* line 40, sass/_content.scss */
+  margin: 0 0.625em 0 0;
+  width: 6.25em;
+  border-radius: 50%;
+  float: left; }
+/* line 44, sass/_content.scss */
 .entry-header .entry-title {
   display: inline-block;
-  padding-top: 0.0625em;
-  vertical-align: top; }
+  margin-top: 10px; }
+/* line 48, sass/_content.scss */
+.entry-header .meta span {
+  margin-right: 0.625em;
+  font-family: 'Montserrat';
+  font-size: 0.875em;
+  color: #7b8a90; }
 
-/* line 47, sass/_content.scss */
+/* line 53, sass/_content.scss */
+.entry-content {
+  margin-top: 2.5em; }
+
+/* line 57, sass/_content.scss */
 .byline,
 .updated {
   display: none; }
 
-/* line 51, sass/_content.scss */
+/* line 61, sass/_content.scss */
 .single .byline,
 .group-blog .byline {
   display: inline; }
 
-/* line 54, sass/_content.scss */
+/* line 64, sass/_content.scss */
 .page-links {
   clear: both;
   margin: 0 0 1.5em; }
 
-/* line 59, sass/_content.scss */
-.entry-meta .comments-link {
-  float: right; }
+/* line 68, sass/_content.scss */
+.entry-meta {
+  border-top: 1px solid #eeeeee;
+  padding-top: 1.25em; }
+  /* line 71, sass/_content.scss */
+  .entry-meta .comments-link {
+    float: right; }
 
-/* line 63, sass/_content.scss */
+/* line 75, sass/_content.scss */
 .tag .page-title {
   display: inline;
   border-left: 5px solid #d9b54b; }
+
+/* line 80, sass/_content.scss */
+#nav-below .nav-previous, #nav-below .nav-next {
+  padding: 0.625em 0 0.625em 0; }
+/* line 83, sass/_content.scss */
+#nav-below .nav-previous a, #nav-below .nav-next a {
+  border-right: none;
+  background: #d9b54b;
+  color: white;
+  border: none;
+  padding: 1.25em 1.25em;
+  box-shadow: none;
+  text-shadow: none; }
+  /* line 8, sass/_buttons.scss */
+  #nav-below .nav-previous a:hover, #nav-below .nav-next a:hover {
+    background: #e4ba40; }
 
 /* =Asides
 ----------------------------------------------- */
@@ -2625,6 +2764,95 @@ nav {
 .blog .format-aside .entry-title,
 .archive .format-aside .entry-title {
   display: none; }
+
+/* =Comments
+----------------------------------------------- */
+/* line 3, sass/_comments.scss */
+#comments {
+  background: white;
+  padding: 1.25em; }
+
+/* line 7, sass/_comments.scss */
+#respond .required {
+  color: red; }
+
+/* line 10, sass/_comments.scss */
+.comment-list {
+  list-style: none;
+  margin: 1.5em 0 0 0; }
+  /* line 13, sass/_comments.scss */
+  .comment-list .comment article {
+    padding: 0.3125em;
+    margin-bottom: 0.9375em;
+    border-bottom: 1px solid #cccccc; }
+
+/* line 19, sass/_comments.scss */
+.comment-content a {
+  word-wrap: break-word; }
+
+/* line 23, sass/_comments.scss */
+.bypostauthor article {
+  background: #eeeeee;
+  border-left: 5px solid black;
+  padding-left: 0.9375em; }
+/* line 28, sass/_comments.scss */
+.bypostauthor .children {
+  background: none;
+  border-left: none;
+  padding-left: 0; }
+
+/* line 35, sass/_comments.scss */
+.children {
+  list-style: none; }
+
+/* line 38, sass/_comments.scss */
+.comment-author-avatar img {
+  border-radius: 50%; }
+
+/* line 41, sass/_comments.scss */
+.comment-meta {
+  margin-bottom: 0.625em; }
+  /* line 43, sass/_comments.scss */
+  .comment-meta .comment-author, .comment-meta .comment-metadata, .comment-meta .comment-author-name a, .comment-meta .comment-author-name, .comment-meta .comment-metadata a {
+    display: inline;
+    font-family: 'Montserrat';
+    font-size: 0.875em;
+    color: #7b8a90;
+    font-size: 12px;
+    text-decoration: none; }
+  /* line 49, sass/_comments.scss */
+  .comment-meta .comment-metadata {
+    padding-left: 0.3125em; }
+  /* line 52, sass/_comments.scss */
+  .comment-meta .comment-author-avatar, .comment-meta .comment-author-name, .comment-meta .comment-metadata {
+    display: inline-block; }
+
+/* =Comments Form 
+----------------------------------------------- */
+/* line 61, sass/_comments.scss */
+#comments form label {
+  font-family: 'Montserrat';
+  font-size: 0.875em;
+  color: #7b8a90;
+  display: block; }
+/* line 65, sass/_comments.scss */
+#comments form input, #comments form textarea {
+  border: none;
+  border-radius: 0;
+  background: #eeeeee;
+  line-height: 2em; }
+
+/* line 72, sass/_comments.scss */
+.form-submit #submit {
+  background: #d9b54b;
+  color: white;
+  border: none;
+  padding: 1.25em 1.25em;
+  box-shadow: none;
+  text-shadow: none; }
+  /* line 8, sass/_buttons.scss */
+  .form-submit #submit:hover {
+    background: #e4ba40; }
 
 /* =Media
 ----------------------------------------------- */
@@ -2728,6 +2956,8 @@ object {
 
 /* line 13, sass/_widgets.scss */
 #secondary {
+  background: white;
+  padding: 1.25em;
   display: block;
   float: left;
   margin-right: 2.35765%;
@@ -2736,7 +2966,7 @@ object {
   #secondary:last-child {
     margin-right: 0; }
 
-/* line 16, sass/_widgets.scss */
+/* line 18, sass/_widgets.scss */
 .widget {
   display: block;
   float: left;
@@ -2756,11 +2986,32 @@ object {
     clear: left; }
 
 /* Make sure select elements fit in widgets */
-/* line 24, sass/_widgets.scss */
+/* line 26, sass/_widgets.scss */
 .widget select {
   max-width: 100%; }
 
 /* Search widget */
-/* line 29, sass/_widgets.scss */
+/* line 31, sass/_widgets.scss */
 .widget_search .search-submit {
   display: none; }
+
+/* line 1, sass/_footer.scss */
+.site-footer {
+  background: black;
+  padding: 1.25em;
+  margin-top: 2.5em; }
+  /* line 5, sass/_footer.scss */
+  .site-footer .site-info {
+    float: right;
+    font-family: 'Montserrat';
+    font-size: 0.875em;
+    color: #7b8a90; }
+    /* line 8, sass/_footer.scss */
+    .site-footer .site-info a {
+      font-family: 'Montserrat';
+      font-size: 0.875em;
+      color: #7b8a90;
+      color: #d9b54b; }
+      /* line 12, sass/_footer.scss */
+      .site-footer .site-info a:hover {
+        color: white; }

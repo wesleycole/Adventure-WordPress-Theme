@@ -4,7 +4,7 @@
  *
  * Contains the closing of the id=main div and all content after
  *
- * @package flatness_factor
+ * @package adventure
  */
 ?>
 
@@ -12,10 +12,10 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
-			<?php do_action( 'flatness_factor_credits' ); ?>
-			<a href="http://wordpress.org/" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', 'flatness_factor' ); ?>" rel="generator"><?php printf( __( 'Proudly powered by %s', 'flatness_factor' ), 'WordPress' ); ?></a>
+			<?php do_action( 'adventure_credits' ); ?>
+			<a href="http://wordpress.org/" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', 'adventure' ); ?>" rel="generator"><?php printf( __( 'Proudly powered by %s', 'adventure' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', 'flatness_factor' ), 'flatness_factor', '<a href="http://underscores.me/" rel="designer">Underscores.me</a>' ); ?>
+			<?php printf( __( 'Theme: %1$s by %2$s.', 'adventure' ), 'adventure', '<a href="http://wesleymcole.com/" rel="designer">Wes Cole & Ryan Andrews</a>' ); ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

@@ -8,7 +8,7 @@
  * E.g., it puts together the home page when no home.php file exists.
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package flatness_factor
+ * @package adventure
  */
 
 get_header(); ?>
@@ -31,7 +31,7 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php flatness_factor_content_nav( 'nav-below' ); ?>
+			<?php adventure_content_nav( 'nav-below' ); ?>
 
 		<?php else : ?>
 

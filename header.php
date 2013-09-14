@@ -4,7 +4,7 @@
  *
  * Displays all of the <head> section and everything up till <main id="main">
  *
- * @package flatness_factor
+ * @package adventure
  */
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -20,7 +20,7 @@
 <body <?php body_class(); ?>>
 	<div id="nav" style="display:none">
 	  <div class="nav-title">  
-	  	<a href="javascript:$.pageslide.close()">close</a>
+	  	<a class="slide-close" href="javascript:$.pageslide.close()">close</a>
 	    <h2>Menu</h2>
 	  </div>
 	  <?php wp_nav_menu( array( 'theme_location' => 'primary', 'walker' => new Arrow_Walker_Nav_Menu() ) ); ?>
@@ -28,15 +28,22 @@
 <div id="page" class="hfeed site">
 	<?php do_action( 'before' ); ?>
 	<header id="masthead" class="site-header" role="banner">
+		<nav class="primary">
+			<a href="#nav" class="menu-toggle"><i class="icon-reorder"></i> Menu</a>
+		</nav>
 		<div class="site-branding">
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-			<nav>
-				<a href="#nav" class="menu-toggle"><i class="icon-reorder"></i> Menu</a>
-				<i class="icon-twitter"></i>
-				<i class="icon-facebook"></i>
-				<i class="icon-instagram"></i>
-				<i class="icon-flickr"></i>
+			<nav class="social">
+				<?php $social_options = get_option ( 'adventure_theme_social_options' ); ?>
+					<?php echo $social_options['twitter'] ? '<a href="' . esc_url( $social_options['twitter'] ) . '"<i class="icon-twitter icon-large"></i></a>' : ''; ?>
+					<?php echo $social_options['facebook'] ? '<a href="' . esc_url( $social_options['facebook'] ) . '"<i class="icon-facebook icon-large"></i></a>' : ''; ?>
+					<?php echo $social_options['googleplus'] ? '<a href="' . esc_url( $social_options['googleplus'] ) . '"<i class="icon-google-plus-sign icon-large"></i></a>' : ''; ?>
+					<?php echo $social_options['instagram'] ? '<a href="' . esc_url( $social_options['instagram'] ) . '"<i class="icon-instagram icon-large"></i></a>' : ''; ?>
+					<?php echo $social_options['github'] ? '<a href="' .esc_url( $social_options['github'] ) . '"<i class="icon-github icon-large"></i></a>' : ''; ?>
+					<?php echo $social_options['youtube'] ? '<a href="' .esc_url( $social_options['youtube'] ) . '"<i class="icon-youtube-play icon-large"></i></a>' : ''; ?>
+					<?php echo $social_options['pinterest'] ? '<a href="' .esc_url( $social_options['pinterest'] ) . '"<i class="icon-pinterest-sign icon-large"></i></a>' : ''; ?>
+					<?php echo $social_options['linkedin'] ? '<a href="' .esc_url( $social_options['linkedin'] ) . '"<i class="icon-linkedin-sign icon-large"></i></a>' : ''; ?>
 			</nav>
 		</div>
 	</header><!-- #masthead -->

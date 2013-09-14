@@ -1,6 +1,6 @@
 <?php
 /**
- * @package flatness_factor
+ * @package adventure
  */
 ?>
 
@@ -8,10 +8,15 @@
 	<header class="entry-header">
 		<?php 
 		if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-		  the_post_thumbnail();
+		  the_post_thumbnail( 'thumbnail');
 		} 
 		?>
-		<h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+		<div class="entry-header-info">
+			<h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+			<div class="meta">
+				<p><span class="author"><i class="icon-user"></i> <?php the_author() ?></span><span class="date"><i class="icon-calendar"></i> <?php the_date(); ?></span></p>
+			</div>
+		</div>
 	</header><!-- .entry-header -->
 
 	<?php if ( is_search() ) : // Only display Excerpts for Search ?>
@@ -20,10 +25,10 @@
 	</div><!-- .entry-summary -->
 	<?php else : ?>
 	<div class="entry-content">
-		<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'flatness_factor' ) ); ?>
+		<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'adventure' ) ); ?>
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'flatness_factor' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'adventure' ),
 				'after'  => '</div>',
 			) );
 		?>
@@ -34,32 +39,28 @@
 		<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
 			<?php
 				/* translators: used between list items, there is a space after the comma */
-				$categories_list = get_the_category_list( __( ' ', 'flatness_factor' ) );
-				if ( $categories_list && flatness_factor_categorized_blog() ) :
+				$categories_list = get_the_category_list( __( ' ', 'adventure' ) );
+				if ( $categories_list && adventure_categorized_blog() ) :
 			?>
 			<p class="cat-links">
-				<?php printf( __( 'Posted in %1$s', 'flatness_factor' ), $categories_list ); ?>
+				<?php printf( __( 'Posted in %1$s', 'adventure' ), $categories_list ); ?>
 			
 			<?php endif; // End if categories ?>
 
 			<?php
 				/* translators: used between list items, there is a space after the comma */
-				$tags_list = get_the_tag_list( '', __( '', 'flatness_factor' ) );
+				$tags_list = get_the_tag_list( '', __( '', 'adventure' ) );
 				if ( $tags_list ) :
 			?>
 			<span class="tags-links">
-				<?php printf( __( 'Tags %1$s', 'flatness_factor' ), $tags_list ); ?>
+				<?php printf( __( 'Tags %1$s', 'adventure' ), $tags_list ); ?>
 			</span></p>
 			<?php endif; // End if $tags_list ?>
 		<?php endif; // End if 'post' == get_post_type() ?>
 		
-		<?php if ( 'post' == get_post_type() ) : ?>
-		<p class="posted_on">
-			<?php flatness_factor_posted_on(); ?>
-		<?php endif; ?>
 
 		<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-		<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'flatness_factor' ), __( '1 Comment', 'flatness_factor' ), __( '% Comments', 'flatness_factor' ) ); ?></span>
+		<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'adventure' ), __( '1 Comment', 'adventure' ), __( '% Comments', 'adventure' ) ); ?></span>
 		<?php endif; ?>
 		
 		</p>
@@ -67,6 +68,6 @@
 
 		
 
-		<?php edit_post_link( __( 'Edit', 'flatness_factor' ), '<span class="edit-link">', '</span>' ); ?>
+		<?php edit_post_link( __( 'Edit', 'adventure' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-meta -->
 </article><!-- #post-## -->

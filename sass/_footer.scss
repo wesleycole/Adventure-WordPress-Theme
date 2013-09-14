@@ -1,0 +1,17 @@
+.site-footer {
+  background: $black;
+  padding: em(20);
+  margin-top: em(40);
+  .site-info {
+    float: right;
+    @include meta-text;
+    a {
+      @include meta-text;
+      color: $primary-brand-color;
+
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+}

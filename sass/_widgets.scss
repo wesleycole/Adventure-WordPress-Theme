@@ -11,6 +11,8 @@
   padding: em(30);
 }
 #secondary {
+  background: $white;
+  padding: em(20);
   @include span-columns(12);
 }
 .widget {

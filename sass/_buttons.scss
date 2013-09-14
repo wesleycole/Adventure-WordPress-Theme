@@ -1,0 +1,11 @@
+@mixin button {
+  background: $primary-brand-color; 
+  color: $white;
+  border: none;
+  padding: em(20) em(20);
+  box-shadow: none;
+  text-shadow: none;
+  &:hover {
+    background: saturate($primary-brand-color, 10%)
+  }
+}

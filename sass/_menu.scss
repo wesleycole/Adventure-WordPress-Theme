@@ -1,15 +1,30 @@
 /* =Menu
 ----------------------------------------------- */
 nav {
-  margin-top: em(15);
+  margin-top: em(5);
   a {
-    border-right: 1px solid $primary-brand-color;
     padding-right: em(10);
     text-decoration: none;
   }
   i {
     font-size: em(20);
-    padding-left: em(10);
+  }
+  .close:hover {
+    border-bottom: none;
+  }
+}
+nav.primary {
+  a {
+    color: $white;
+    position: fixed;
+    margin-top: -10px;
+    background: $primary-brand-color;
+    padding: em(10) em(30);
+    border-bottom: none;
+    &:hover {
+      color: $dark-gray;
+      @include transition(all 0.5s)
+    }
   }
 }
 .nav-title {
@@ -28,6 +43,7 @@ nav {
     font-size: em(12);
     &:hover {
       color: $primary-brand-color;
+      border-bottom: none;
     }
   }
 }
@@ -41,6 +57,7 @@ nav {
     @include menu-text;
     &:hover > a {
       color: $primary-brand-color;
+      border-bottom: none;
     }
     &:hover ul {
       display: block;
@@ -87,5 +104,6 @@ nav {
 .menu li.current-menu-item a {
   color: $black;
 }
+
 
 

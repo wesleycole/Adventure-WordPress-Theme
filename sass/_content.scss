@@ -26,7 +26,8 @@
 }
 .hentry {
   margin: em(80) 0 1.5em;
-  padding-bottom: em(30);
+  padding: em(20);
+  background: $white;
   border-bottom: 1px solid #ccc;
   &:last-child {
     border-bottom: none;
@@ -35,13 +36,22 @@
 .entry-header {
   .wp-post-image {
     display: inline-block;
-    padding-right: em(5);
+    margin: 0 em(10) 0 0;
+    width: em(100);
+    border-radius: 50%;
+    float: left;
   }
   .entry-title {
     display: inline-block;
-    padding-top: em(1);
-    vertical-align: top;
+    margin-top: 10px;
   }
+  .meta span {
+    margin-right: em(10);
+    @include meta-text;
+  }
+}
+.entry-content {
+  margin-top: em(40);
 }
 .byline,
 .updated {
@@ -56,6 +66,8 @@
   margin: 0 0 1.5em;
 }
 .entry-meta {
+  border-top: 1px solid $light-gray;
+  padding-top: em(20);
   .comments-link {
     float: right;
   }
@@ -63,4 +75,13 @@
 .tag .page-title {
   display: inline;
   border-left: 5px solid $primary-brand-color;
+}
+#nav-below {
+  .nav-previous, .nav-next {
+    padding: em(10) 0 em(10) 0;
+  }
+  .nav-previous a, .nav-next a {
+    border-right: none;
+    @include button;
+  }
 }
