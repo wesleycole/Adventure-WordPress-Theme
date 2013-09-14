@@ -141,9 +141,8 @@ function adventure_theme_default_social_options() {
 function adventure_theme_default_general_options() {
 
   $defaults = array(
-    'show_header'   =>  '',
-    'show_content'    =>  '',
-    'show_footer_copyright'   =>  '<a href="http://wesleymcole">Wesley Cole</a>',
+    'google_analytics'   =>  '',
+    'show_footer_copyright'   =>  '',
   );
 
   return apply_filters( 'adventure_theme_default_general_options', $defaults );
@@ -188,26 +187,14 @@ function adventure_initialize_theme_options() {
     'adventure_theme_general_options'   // Page on which to add this section of options
   );
 
-  // Next, we'll introduce the fields for toggling the visibility of content elements.
-  add_settings_field( 
-    'show_header',            // ID used to identify the field throughout the theme
-    __( 'Header', 'adventure' ),              // The label to the left of the option interface element
-    'adventure_toggle_header_callback', // The name of the function responsible for rendering the option interface
-    'adventure_theme_general_options',  // The page on which this option will be displayed
-    'general_settings_section',     // The name of the section to which this field belongs
-    array(                // The array of arguments to pass to the callback. In this case, just a description.
-      __( 'Activate this setting to display the header.', 'adventure' ),
-    )
-  );
-
-  add_settings_field( 
-    'show_content',           
-    __( 'Content', 'adventure' ),       
-    'adventure_toggle_content_callback',  
-    'adventure_theme_general_options',          
-    'general_settings_section',     
-    array(                
-      __( 'Activate this setting to display the content.', 'adventure' ),
+  add_settings_field(
+    'google_analytics',
+    __( 'Google Analytics ID', 'adventure' ),
+    'adventure_google_analytics_callback',
+    'adventure_theme_general_options',
+    'general_settings_section',
+    array (
+      __( 'Add your Google Analytics ID to start tracking visits to your site.', 'adventure' ),
     )
   );
 
@@ -225,7 +212,8 @@ function adventure_initialize_theme_options() {
   // Finally, we register the fields with WordPress
   register_setting(
     'adventure_theme_general_options',
-    'adventure_theme_general_options'
+    'adventure_theme_general_options',
+    'adventure_theme_validate_input_examples'
   );
 
 } // end adventure_initialize_theme_options
@@ -436,6 +424,17 @@ function adventure_input_examples_callback() {
  * It accepts an array or arguments and expects the first element in the array to be the description
  * to be displayed next to the checkbox.
  */
+
+
+function adventure_google_analytics_callback() {
+
+  $options = get_option( 'adventure_theme_general_options' );
+
+  // Render the output
+  echo '<input type="text" id="google_analytics" placeholder="UA-12345678-1" name="adventure_theme_general_options[google_analytics]" value="' . $options['google_analytics'] . '" />';
+
+} // end adventure_google_analytics_callback
+
 function adventure_toggle_header_callback($args) {
 
   // First, we read the options collection
@@ -660,6 +659,7 @@ function adventure_select_element_callback() {
  *
  * @returns     The collection of sanitized values.
  */
+
 function adventure_theme_sanitize_social_options( $input ) {
 
   // Define the array for the updated options

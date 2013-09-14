@@ -147,6 +147,24 @@ class Arrow_Walker_Nav_Menu extends Walker_Nav_Menu {
     }
 }
 
+add_action('wp_head', 'adventure_add_ga_tracking');
+
+function adventure_add_ga_tracking() { 
+  $general_options = get_option ( 'adventure_theme_general_options' );
+  $propertyID = $general_options['google_analytics'];
+  ?>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', '<?php echo $propertyID; ?>', '<?php bloginfo('url');?>';
+    ga('send', 'pageview');
+
+  </script>
+<?php }
+
 /**
  * Add Featured Image Support
  */
