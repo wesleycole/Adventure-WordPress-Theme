@@ -143,7 +143,7 @@ function adventure_theme_default_general_options() {
   $defaults = array(
     'show_header'   =>  '',
     'show_content'    =>  '',
-    'show_footer'   =>  '',
+    'show_footer_copyright'   =>  '<a href="http://wesleymcole">Wesley Cole</a>',
   );
 
   return apply_filters( 'adventure_theme_default_general_options', $defaults );
