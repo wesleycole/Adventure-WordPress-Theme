@@ -24,10 +24,10 @@ function adventure_example_theme_menu() {
 
   add_submenu_page(
     'adventure_theme_menu',       // The ID of the top-level menu page to which this submenu item belongs
-    __( 'Display Options', 'adventure' ),     // The value used to populate the browser's title bar when the menu page is active
-    __( 'Display Options', 'adventure' ),         // The label of this submenu item displayed in the menu
+    __( 'General Options', 'adventure' ),     // The value used to populate the browser's title bar when the menu page is active
+    __( 'General Options', 'adventure' ),         // The label of this submenu item displayed in the menu
     'administrator',          // What roles are able to access this submenu item
-    'adventure_theme_display_options',  // The ID used to represent this submenu item
+    'adventure_theme_general_options',  // The ID used to represent this submenu item
     'adventure_theme_display'       // The callback function used to render the options for this submenu item
   );
 
@@ -72,11 +72,11 @@ function adventure_theme_display( $active_tab = '' ) {
     } else if( $active_tab == 'input_examples' ) {
       $active_tab = 'input_examples';
     } else {
-      $active_tab = 'display_options';
+      $active_tab = 'general_options';
     } // end if/else ?>
 
     <h2 class="nav-tab-wrapper">
-      <a href="?page=adventure_theme_options&tab=display_options" class="nav-tab <?php echo $active_tab == 'display_options' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Display Options', 'adventure' ); ?></a>
+      <a href="?page=adventure_theme_options&tab=general_options" class="nav-tab <?php echo $active_tab == 'general_options' ? 'nav-tab-active' : ''; ?>"><?php _e( 'General Options', 'adventure' ); ?></a>
       <a href="?page=adventure_theme_options&tab=social_options" class="nav-tab <?php echo $active_tab == 'social_options' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Social Options', 'adventure' ); ?></a>
       <a href="?page=adventure_theme_options&tab=input_examples" class="nav-tab <?php echo $active_tab == 'input_examples' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Input Examples', 'adventure' ); ?></a>
     </h2>
@@ -84,10 +84,10 @@ function adventure_theme_display( $active_tab = '' ) {
     <form method="post" action="options.php">
       <?php
 
-        if( $active_tab == 'display_options' ) {
+        if( $active_tab == 'general_options' ) {
 
-          settings_fields( 'adventure_theme_display_options' );
-          do_settings_sections( 'adventure_theme_display_options' );
+          settings_fields( 'adventure_theme_general_options' );
+          do_settings_sections( 'adventure_theme_general_options' );
 
         } elseif( $active_tab == 'social_options' ) {
 
@@ -124,6 +124,11 @@ function adventure_theme_default_social_options() {
     'twitter'   =>  '',
     'facebook'    =>  '',
     'googleplus'  =>  '',
+    'instagram' => '',
+    'github' => '',
+    'youtube' => '',
+    'pinterest' => '',
+    'linkedin' => '',
   );
 
   return apply_filters( 'adventure_theme_default_social_options', $defaults );
@@ -133,7 +138,7 @@ function adventure_theme_default_social_options() {
 /**
  * Provides default values for the Display Options.
  */
-function adventure_theme_default_display_options() {
+function adventure_theme_default_general_options() {
 
   $defaults = array(
     'show_header'   =>  '',
@@ -141,9 +146,9 @@ function adventure_theme_default_display_options() {
     'show_footer'   =>  '',
   );
 
-  return apply_filters( 'adventure_theme_default_display_options', $defaults );
+  return apply_filters( 'adventure_theme_default_general_options', $defaults );
 
-} // end adventure_theme_default_display_options
+} // end adventure_theme_default_general_options
 
 /**
  * Provides default values for the Input Options.
@@ -171,16 +176,16 @@ function adventure_theme_default_input_options() {
 function adventure_initialize_theme_options() {
 
   // If the theme options don't exist, create them.
-  if( false == get_option( 'adventure_theme_display_options' ) ) {  
-    add_option( 'adventure_theme_display_options', apply_filters( 'adventure_theme_default_display_options', adventure_theme_default_display_options() ) );
+  if( false == get_option( 'adventure_theme_general_options' ) ) {  
+    add_option( 'adventure_theme_general_options', apply_filters( 'adventure_theme_default_general_options', adventure_theme_default_general_options() ) );
   } // end if
 
   // First, we register a section. This is necessary since all future options must belong to a 
   add_settings_section(
     'general_settings_section',     // ID used to identify this section and with which to register options
-    __( 'Display Options', 'adventure' ),   // Title to be displayed on the administration page
+    __( 'General Options', 'adventure' ),   // Title to be displayed on the administration page
     'adventure_general_options_callback', // Callback used to render the description of the section
-    'adventure_theme_display_options'   // Page on which to add this section of options
+    'adventure_theme_general_options'   // Page on which to add this section of options
   );
 
   // Next, we'll introduce the fields for toggling the visibility of content elements.
@@ -188,7 +193,7 @@ function adventure_initialize_theme_options() {
     'show_header',            // ID used to identify the field throughout the theme
     __( 'Header', 'adventure' ),              // The label to the left of the option interface element
     'adventure_toggle_header_callback', // The name of the function responsible for rendering the option interface
-    'adventure_theme_display_options',  // The page on which this option will be displayed
+    'adventure_theme_general_options',  // The page on which this option will be displayed
     'general_settings_section',     // The name of the section to which this field belongs
     array(                // The array of arguments to pass to the callback. In this case, just a description.
       __( 'Activate this setting to display the header.', 'adventure' ),
@@ -199,7 +204,7 @@ function adventure_initialize_theme_options() {
     'show_content',           
     __( 'Content', 'adventure' ),       
     'adventure_toggle_content_callback',  
-    'adventure_theme_display_options',          
+    'adventure_theme_general_options',          
     'general_settings_section',     
     array(                
       __( 'Activate this setting to display the content.', 'adventure' ),
@@ -207,20 +212,20 @@ function adventure_initialize_theme_options() {
   );
 
   add_settings_field( 
-    'show_footer',            
-    __( 'Footer', 'adventure' ),        
-    'adventure_toggle_footer_callback', 
-    'adventure_theme_display_options',    
+    'show_footer_copyright',            
+    __( 'Footer Copyright Information', 'adventure' ),        
+    'adventure_footer_copyright_callback', 
+    'adventure_theme_general_options',    
     'general_settings_section',     
     array(                
-      __( 'Activate this setting to display the footer.', 'adventure' ),
+      __( 'Edit the text below to show your own copyright information on the site.', 'adventure' ),
     )
   );
 
   // Finally, we register the fields with WordPress
   register_setting(
-    'adventure_theme_display_options',
-    'adventure_theme_display_options'
+    'adventure_theme_general_options',
+    'adventure_theme_general_options'
   );
 
 } // end adventure_initialize_theme_options
@@ -398,7 +403,7 @@ add_action( 'admin_init', 'adventure_theme_initialize_input_examples' );
  * in the add_settings_section function.
  */
 function adventure_general_options_callback() {
-  echo '<p>' . __( 'Select which areas of content you wish to display.', 'adventure' ) . '</p>';
+  echo '<p>' . __( 'Edit the following areas below to customize the general settings of this theme.', 'adventure' ) . '</p>';
 } // end adventure_general_options_callback
 
 /**
@@ -434,11 +439,11 @@ function adventure_input_examples_callback() {
 function adventure_toggle_header_callback($args) {
 
   // First, we read the options collection
-  $options = get_option('adventure_theme_display_options');
+  $options = get_option('adventure_theme_general_options');
 
   // Next, we update the name attribute to access this element's ID in the context of the display options array
   // We also access the show_header element of the options collection in the call to the checked() helper function
-  $html = '<input type="checkbox" id="show_header" name="adventure_theme_display_options[show_header]" value="1" ' . checked( 1, isset( $options['show_header'] ) ? $options['show_header'] : 0, false ) . '/>'; 
+  $html = '<input type="checkbox" id="show_header" name="adventure_theme_general_options[show_header]" value="1" ' . checked( 1, isset( $options['show_header'] ) ? $options['show_header'] : 0, false ) . '/>'; 
 
   // Here, we'll take the first argument of the array and add it to a label next to the checkbox
   $html .= '<label for="show_header">&nbsp;'  . $args[0] . '</label>'; 
@@ -449,25 +454,24 @@ function adventure_toggle_header_callback($args) {
 
 function adventure_toggle_content_callback($args) {
 
-  $options = get_option('adventure_theme_display_options');
+  $options = get_option('adventure_theme_general_options');
 
-  $html = '<input type="checkbox" id="show_content" name="adventure_theme_display_options[show_content]" value="1" ' . checked( 1, isset( $options['show_content'] ) ? $options['show_content'] : 0, false ) . '/>'; 
+  $html = '<input type="checkbox" id="show_content" name="adventure_theme_general_options[show_content]" value="1" ' . checked( 1, isset( $options['show_content'] ) ? $options['show_content'] : 0, false ) . '/>'; 
   $html .= '<label for="show_content">&nbsp;'  . $args[0] . '</label>'; 
 
   echo $html;
 
 } // end adventure_toggle_content_callback
 
-function adventure_toggle_footer_callback($args) {
 
-  $options = get_option('adventure_theme_display_options');
+function adventure_footer_copyright_callback() {
 
-  $html = '<input type="checkbox" id="show_footer" name="adventure_theme_display_options[show_footer]" value="1" ' . checked( 1, isset( $options['show_footer'] ) ? $options['show_footer'] : 0, false ) . '/>'; 
-  $html .= '<label for="show_footer">&nbsp;'  . $args[0] . '</label>'; 
+  $options = get_option( 'adventure_theme_general_options' );
 
-  echo $html;
+  // Render the output
+  echo '<textarea id="textarea_example" placeholder="Enter your own copyright information here." name="adventure_theme_general_options[show_footer]" rows="5" cols="50">' . $options['show_footer'] . '</textarea>';
 
-} // end adventure_toggle_footer_callback
+}
 
 function adventure_twitter_callback() {
 
