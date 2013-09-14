@@ -33,13 +33,4 @@
 			}
 		} );
 	} );
-	// Link color
-  wp.customize( 'link_color', function( value ) {
-  	value.bind( function( to ) {
-  		$( '.entry-content a' ).css( {
-  			'color': to,
-  		} );
-  	} );
-  } );
-
 } )( jQuery );

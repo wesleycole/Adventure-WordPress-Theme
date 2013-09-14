@@ -14,25 +14,6 @@ function adventure_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
-
-  $wp_customize->add_setting( 'link_color', 
-    array( 'default'   => "#D9B54B", 
-           'transport' => 'postMessage',
-           )
-    );
-  $wp_customize->add_control(
-    new WP_Customize_Color_Control(
-      $wp_customize,
-      'link_color',
-      array(
-        'label'    => __( 'Link Color', 'adventure' ),
-        'section'  => 'colors',
-        'settings' => 'link_color'
-        )
-      )
-    );
-
-  $wp_customize-> get_setting( 'link_color' )->transport = 'postMessage';
 }
 add_action( 'customize_register', 'adventure_customize_register' );
 

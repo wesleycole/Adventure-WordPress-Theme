@@ -40,16 +40,6 @@ function adventure_example_theme_menu() {
     create_function( null, 'adventure_theme_display( "social_options" );' )
   );
 
-  add_submenu_page(
-    'adventure_theme_menu',
-    __( 'Input Examples', 'adventure' ),
-    __( 'Input Examples', 'adventure' ),
-    'administrator',
-    'adventure_theme_input_examples',
-    create_function( null, 'adventure_theme_display( "input_examples" );' )
-  );
-
-
 } // end adventure_example_theme_menu
 add_action( 'admin_menu', 'adventure_example_theme_menu' );
 
@@ -69,8 +59,6 @@ function adventure_theme_display( $active_tab = '' ) {
       $active_tab = $_GET[ 'tab' ];
     } else if( $active_tab == 'social_options' ) {
       $active_tab = 'social_options';
-    } else if( $active_tab == 'input_examples' ) {
-      $active_tab = 'input_examples';
     } else {
       $active_tab = 'general_options';
     } // end if/else ?>
@@ -78,7 +66,6 @@ function adventure_theme_display( $active_tab = '' ) {
     <h2 class="nav-tab-wrapper">
       <a href="?page=adventure_theme_options&tab=general_options" class="nav-tab <?php echo $active_tab == 'general_options' ? 'nav-tab-active' : ''; ?>"><?php _e( 'General Options', 'adventure' ); ?></a>
       <a href="?page=adventure_theme_options&tab=social_options" class="nav-tab <?php echo $active_tab == 'social_options' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Social Options', 'adventure' ); ?></a>
-      <a href="?page=adventure_theme_options&tab=input_examples" class="nav-tab <?php echo $active_tab == 'input_examples' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Input Examples', 'adventure' ); ?></a>
     </h2>
     
     <form method="post" action="options.php">
@@ -89,15 +76,10 @@ function adventure_theme_display( $active_tab = '' ) {
           settings_fields( 'adventure_theme_general_options' );
           do_settings_sections( 'adventure_theme_general_options' );
 
-        } elseif( $active_tab == 'social_options' ) {
+        } else {
 
           settings_fields( 'adventure_theme_social_options' );
           do_settings_sections( 'adventure_theme_social_options' );
-
-        } else {
-
-          settings_fields( 'adventure_theme_input_examples' );
-          do_settings_sections( 'adventure_theme_input_examples' );
 
         } // end if/else
 

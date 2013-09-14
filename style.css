@@ -2295,23 +2295,23 @@ a {
 img:hover {
   border-bottom: none; }
 
-/* line 99, sass/_typography.scss */
+/* line 98, sass/_typography.scss */
 .site-title {
   text-transform: uppercase;
   text-decoration: none; }
-  /* line 102, sass/_typography.scss */
+  /* line 101, sass/_typography.scss */
   .site-title a {
     text-decoration: none;
     font-family: 'Montserrat';
     font-size: 3.125em; }
-    /* line 105, sass/_typography.scss */
+    /* line 104, sass/_typography.scss */
     .site-title a:hover {
       border-bottom: none; }
-    /* line 108, sass/_typography.scss */
+    /* line 107, sass/_typography.scss */
     .site-title a:visited {
       color: black; }
 
-/* line 114, sass/_typography.scss */
+/* line 112, sass/_typography.scss */
 .site-description {
   font-family: 'Droid Serif';
   font-size: 1.125em;
@@ -2319,7 +2319,7 @@ img:hover {
   color: #7b8a90;
   font-style: italic; }
 
-/* line 120, sass/_typography.scss */
+/* line 118, sass/_typography.scss */
 .entry-title {
   text-transform: uppercase;
   text-decoration: none;
@@ -2327,32 +2327,32 @@ img:hover {
   word-wrap: break-word;
   font-family: 'Montserrat';
   color: black; }
-  /* line 126, sass/_typography.scss */
+  /* line 124, sass/_typography.scss */
   .entry-title a {
     font-family: 'Montserrat';
     color: black;
     text-decoration: none;
     color: black; }
-    /* line 130, sass/_typography.scss */
+    /* line 128, sass/_typography.scss */
     .entry-title a:visited {
       color: black; }
-    /* line 133, sass/_typography.scss */
+    /* line 131, sass/_typography.scss */
     .entry-title a:hover {
       color: #7b8a90; }
 
-/* line 138, sass/_typography.scss */
+/* line 136, sass/_typography.scss */
 .entry-content p {
   line-height: 2;
   -ms-word-wrap: break-word;
   word-wrap: break-word; }
 
-/* line 144, sass/_typography.scss */
+/* line 142, sass/_typography.scss */
 .entry-meta p, .entry-meta a, .entry-meta span {
   font-family: 'Montserrat';
   font-size: 0.875em;
   color: #7b8a90; }
 
-/* line 147, sass/_typography.scss */
+/* line 145, sass/_typography.scss */
 blockquote {
   font-family: 'Montserrat';
   font-size: 0.875em;
@@ -2366,7 +2366,7 @@ blockquote {
   border-left: 5px solid black;
   background: #d9b54b;
   text-align: center; }
-  /* line 158, sass/_typography.scss */
+  /* line 156, sass/_typography.scss */
   blockquote p {
     font-family: 'Montserrat';
     font-size: 0.875em;
@@ -2374,63 +2374,63 @@ blockquote {
     font-size: 1.125em;
     color: black; }
 
-/* line 165, sass/_typography.scss */
+/* line 163, sass/_typography.scss */
 blockquote cite {
   color: #7b8a90;
   font-size: 14px;
   display: block;
   margin-top: 5px; }
 
-/* line 172, sass/_typography.scss */
+/* line 170, sass/_typography.scss */
 blockquote cite:before {
   content: "\2014 \2009"; }
 
-/* line 175, sass/_typography.scss */
+/* line 173, sass/_typography.scss */
 table {
   padding: 0.625em; }
-  /* line 177, sass/_typography.scss */
+  /* line 175, sass/_typography.scss */
   table thead {
     background-color: #7b8a90; }
-    /* line 179, sass/_typography.scss */
+    /* line 177, sass/_typography.scss */
     table thead th {
       padding: 0.3125em; }
-  /* line 183, sass/_typography.scss */
+  /* line 181, sass/_typography.scss */
   table td {
     border-bottom: 1px solid #7b8a90;
     border-left: 1px solid #7b8a90;
     padding: 0.625em; }
-    /* line 187, sass/_typography.scss */
+    /* line 185, sass/_typography.scss */
     table td:last-child {
       border-right: 1px solid #7b8a90; }
 
-/* line 193, sass/_typography.scss */
+/* line 191, sass/_typography.scss */
 dl, dt, dd {
   font-family: 'Droid Serif';
   font-size: 1.125em; }
 
-/* line 196, sass/_typography.scss */
+/* line 194, sass/_typography.scss */
 dd {
   font-style: italic; }
 
-/* line 199, sass/_typography.scss */
+/* line 197, sass/_typography.scss */
 ol ol li, ul ul li {
   font-size: 1em; }
 
-/* line 202, sass/_typography.scss */
+/* line 200, sass/_typography.scss */
 li, li span {
   font-family: 'Droid Serif';
   font-size: 1.125em; }
 
-/* line 205, sass/_typography.scss */
+/* line 203, sass/_typography.scss */
 address {
   font-style: italic; }
 
-/* line 208, sass/_typography.scss */
+/* line 206, sass/_typography.scss */
 code, kbd, tt, var {
   background-color: #eeeeee;
   padding: 0.3125em; }
 
-/* line 221, sass/_typography.scss */
+/* line 219, sass/_typography.scss */
 a.icon-twitter,
 a.icon-facebook,
 a.icon-google-plus-sign,
@@ -2440,7 +2440,7 @@ a.icon-youtube-play,
 a.icon-linkedin-sign,
 a.icon-pinterest-sign {
   color: black; }
-  /* line 223, sass/_typography.scss */
+  /* line 221, sass/_typography.scss */
   a.icon-twitter:visited,
   a.icon-facebook:visited,
   a.icon-google-plus-sign:visited,
@@ -2451,42 +2451,42 @@ a.icon-pinterest-sign {
   a.icon-pinterest-sign:visited {
     color: black; }
 
-/* line 227, sass/_typography.scss */
+/* line 225, sass/_typography.scss */
 a.icon-twitter:hover {
   color: #00acee;
   border-bottom: none; }
 
-/* line 231, sass/_typography.scss */
+/* line 229, sass/_typography.scss */
 a.icon-facebook:hover {
   color: #3b5998;
   border-bottom: none; }
 
-/* line 235, sass/_typography.scss */
+/* line 233, sass/_typography.scss */
 a.icon-google-plus-sign:hover {
   color: #dd4b39;
   border-bottom: none; }
 
-/* line 239, sass/_typography.scss */
+/* line 237, sass/_typography.scss */
 a.icon-instagram:hover {
   color: #3f729b;
   border-bottom: none; }
 
-/* line 243, sass/_typography.scss */
+/* line 241, sass/_typography.scss */
 a.icon-github:hover {
   color: #171515;
   border-bottom: none; }
 
-/* line 247, sass/_typography.scss */
+/* line 245, sass/_typography.scss */
 a.icon-youtube-play:hover {
   color: #c4302b;
   border-bottom: none; }
 
-/* line 251, sass/_typography.scss */
+/* line 249, sass/_typography.scss */
 a.icon-linkedin-sign:hover {
   color: #0e76a8;
   border-bottom: none; }
 
-/* line 255, sass/_typography.scss */
+/* line 253, sass/_typography.scss */
 a.icon-pinterest-sign:hover {
   color: #c8232c;
   border-bottom: none; }
