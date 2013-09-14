@@ -2931,19 +2931,18 @@ object {
   display: block;
   float: left;
   margin-right: 2.35765%;
-  width: 100%;
-  margin-left: 1.875em; }
+  width: 100%; }
   /* line 41, sass/neat/grid/_span-columns.scss */
   .home_widgets:last-child {
     margin-right: 0; }
 
-/* line 8, sass/_widgets.scss */
+/* line 6, sass/_widgets.scss */
 .home_widget {
   display: block;
   float: left;
   margin-right: 2.35765%;
   width: 31.76157%;
-  padding: 1.875em; }
+  padding: 0.625em; }
   /* line 41, sass/neat/grid/_span-columns.scss */
   .home_widget:last-child {
     margin-right: 0; }
@@ -2954,7 +2953,7 @@ object {
   .home_widget:nth-child(4n+1) {
     clear: left; }
 
-/* line 13, sass/_widgets.scss */
+/* line 11, sass/_widgets.scss */
 #secondary {
   background: white;
   padding: 1.25em;
@@ -2966,7 +2965,7 @@ object {
   #secondary:last-child {
     margin-right: 0; }
 
-/* line 18, sass/_widgets.scss */
+/* line 16, sass/_widgets.scss */
 .widget {
   display: block;
   float: left;
@@ -2986,12 +2985,12 @@ object {
     clear: left; }
 
 /* Make sure select elements fit in widgets */
-/* line 26, sass/_widgets.scss */
+/* line 24, sass/_widgets.scss */
 .widget select {
   max-width: 100%; }
 
 /* Search widget */
-/* line 31, sass/_widgets.scss */
+/* line 29, sass/_widgets.scss */
 .widget_search .search-submit {
   display: none; }
 

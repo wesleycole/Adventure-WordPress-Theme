@@ -2,13 +2,11 @@
 ----------------------------------------------- */
 .home_widgets {
   @include span-columns(12);
-  margin-left: em(30);
-
 }
 .home_widget {
   @include span-columns(4);
   @include omega(4n);
-  padding: em(30);
+  padding: em(10);
 }
 #secondary {
   background: $white;
