@@ -7,17 +7,10 @@
   @include span-columns(4);
   @include omega(3n);
   padding: em(10);
-}
-#secondary {
-  background: $white;
-  padding: em(20);
-  @include span-columns(12);
-}
-.widget {
-  @include span-columns(4);
-  @include omega(4n);
-  padding: em(30);
-  @include wrap;
+  @include media($mobile) { // As defined in _grid-settings.scss
+      width: 100%;
+      margin: em(10);
+    }
 }
 
 /* Make sure select elements fit in widgets */

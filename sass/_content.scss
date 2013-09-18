@@ -17,15 +17,7 @@
     margin-right: 0;
   }
 }
-.sticky {
-  border: 1px solid $gray;
-  border-left: 5px solid $primary-brand-color;
-  border-radius: 4px;
-  padding: em(20);
-  @media (max-width: 600px) {
-    margin: em(10);
-  }
-}
+
 .hentry {
   margin: em(80) 0 1.5em;
   padding: em(20);
@@ -33,6 +25,18 @@
   border-bottom: 1px solid #ccc;
   &:last-child {
     border-bottom: none;
+  }
+}
+.sticky {
+  border: 1px solid $gray;
+  border-left: 5px solid $primary-brand-color;
+  border-radius: 4px;
+  padding: em(20);
+  @include media($mobile) {
+    margin: em(10);
+  }
+  @include media($tablet) {
+    margin: em(10);
   }
 }
 .entry-header {
@@ -81,6 +85,13 @@
 #nav-below {
   .nav-previous, .nav-next {
     padding: em(10) 0 em(10) 0;
+    @include media($tablet) {
+      margin: 0 em(10);
+    }
+    @include media($mobile) {
+      margin: 0 em(10);
+      width: 40%;
+    }
   }
   .nav-previous a, .nav-next a {
     border-right: none;

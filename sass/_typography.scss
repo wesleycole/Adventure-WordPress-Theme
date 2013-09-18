@@ -101,7 +101,7 @@ img:hover {
   a {
     text-decoration: none;
     @include header-text;
-    @media (max-width: 600px) {
+    @include media($mobile) {
         font-size: em(20);
       }
     &:hover {

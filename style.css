@@ -2304,7 +2304,7 @@ img:hover {
     text-decoration: none;
     font-family: 'Montserrat';
     font-size: 3.125em; }
-    @media (max-width: 600px) {
+    @media screen and (max-width: 600px) {
       /* line 101, sass/_typography.scss */
       .site-title a {
         font-size: 1.25em; } }
@@ -2679,81 +2679,94 @@ nav.primary a {
     #content p.half:last-child {
       margin-right: 0; }
 
-/* line 20, sass/_content.scss */
-.sticky {
-  border: 1px solid #cccccc;
-  border-left: 5px solid #d9b54b;
-  border-radius: 4px;
-  padding: 1.25em; }
-  @media (max-width: 600px) {
-    /* line 20, sass/_content.scss */
-    .sticky {
-      margin: 0.625em; } }
-
-/* line 29, sass/_content.scss */
+/* line 21, sass/_content.scss */
 .hentry {
   margin: 5em 0 1.5em;
   padding: 1.25em;
   background: white;
   border-bottom: 1px solid #ccc; }
-  /* line 34, sass/_content.scss */
+  /* line 26, sass/_content.scss */
   .hentry:last-child {
     border-bottom: none; }
 
-/* line 39, sass/_content.scss */
+/* line 30, sass/_content.scss */
+.sticky {
+  border: 1px solid #cccccc;
+  border-left: 5px solid #d9b54b;
+  border-radius: 4px;
+  padding: 1.25em; }
+  @media screen and (max-width: 600px) {
+    /* line 30, sass/_content.scss */
+    .sticky {
+      margin: 0.625em; } }
+  @media screen and (min-width: \f10a) {
+    /* line 30, sass/_content.scss */
+    .sticky {
+      margin: 0.625em; } }
+
+/* line 43, sass/_content.scss */
 .entry-header .wp-post-image {
   display: inline-block;
   margin: 0 0.625em 0 0;
   width: 6.25em;
   border-radius: 50%;
   float: left; }
-/* line 46, sass/_content.scss */
+/* line 50, sass/_content.scss */
 .entry-header .entry-title {
   display: inline-block;
   margin-top: 10px; }
-/* line 50, sass/_content.scss */
+/* line 54, sass/_content.scss */
 .entry-header .meta span {
   margin-right: 0.625em;
   font-family: 'Montserrat';
   font-size: 0.875em;
   color: #7b8a90; }
 
-/* line 55, sass/_content.scss */
+/* line 59, sass/_content.scss */
 .entry-content {
   margin-top: 2.5em; }
 
-/* line 59, sass/_content.scss */
+/* line 63, sass/_content.scss */
 .byline,
 .updated {
   display: none; }
 
-/* line 63, sass/_content.scss */
+/* line 67, sass/_content.scss */
 .single .byline,
 .group-blog .byline {
   display: inline; }
 
-/* line 66, sass/_content.scss */
+/* line 70, sass/_content.scss */
 .page-links {
   clear: both;
   margin: 0 0 1.5em; }
 
-/* line 70, sass/_content.scss */
+/* line 74, sass/_content.scss */
 .entry-meta {
   border-top: 1px solid #eeeeee;
   padding-top: 1.25em; }
-  /* line 73, sass/_content.scss */
+  /* line 77, sass/_content.scss */
   .entry-meta .comments-link {
     float: right; }
 
-/* line 77, sass/_content.scss */
+/* line 81, sass/_content.scss */
 .tag .page-title {
   display: inline;
   border-left: 5px solid #d9b54b; }
 
-/* line 82, sass/_content.scss */
+/* line 86, sass/_content.scss */
 #nav-below .nav-previous, #nav-below .nav-next {
   padding: 0.625em 0 0.625em 0; }
-/* line 85, sass/_content.scss */
+  @media screen and (min-width: \f10a) {
+    /* line 86, sass/_content.scss */
+    #nav-below .nav-previous, #nav-below .nav-next {
+      margin: 0 0.625em; } }
+  @media screen and (max-width: 600px) {
+    /* line 86, sass/_content.scss */
+    #nav-below .nav-previous, #nav-below .nav-next {
+      margin: 0 0.625em;
+      width: 40%; } }
+/* line 96, sass/_content.scss */
 #nav-below .nav-previous a, #nav-below .nav-next a {
   border-right: none;
   background: #d9b54b;
@@ -2960,45 +2973,19 @@ object {
   /* line 75, sass/neat/grid/_omega.scss */
   .home_widget:nth-child(3n+1) {
     clear: left; }
-
-/* line 11, sass/_widgets.scss */
-#secondary {
-  background: white;
-  padding: 1.25em;
-  display: block;
-  float: left;
-  margin-right: 2.35765%;
-  width: 100%; }
-  /* line 41, sass/neat/grid/_span-columns.scss */
-  #secondary:last-child {
-    margin-right: 0; }
-
-/* line 16, sass/_widgets.scss */
-.widget {
-  display: block;
-  float: left;
-  margin-right: 2.35765%;
-  width: 31.76157%;
-  padding: 1.875em;
-  -ms-word-wrap: break-word;
-  word-wrap: break-word; }
-  /* line 41, sass/neat/grid/_span-columns.scss */
-  .widget:last-child {
-    margin-right: 0; }
-  /* line 70, sass/neat/grid/_omega.scss */
-  .widget:nth-child(4n) {
-    margin-right: 0; }
-  /* line 75, sass/neat/grid/_omega.scss */
-  .widget:nth-child(4n+1) {
-    clear: left; }
+  @media screen and (max-width: 600px) {
+    /* line 6, sass/_widgets.scss */
+    .home_widget {
+      width: 100%;
+      margin: 0.625em; } }
 
 /* Make sure select elements fit in widgets */
-/* line 24, sass/_widgets.scss */
+/* line 17, sass/_widgets.scss */
 .widget select {
   max-width: 100%; }
 
 /* Search widget */
-/* line 29, sass/_widgets.scss */
+/* line 22, sass/_widgets.scss */
 .widget_search .search-submit {
   display: none; }
 
