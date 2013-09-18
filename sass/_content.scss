@@ -22,7 +22,9 @@
   border-left: 5px solid $primary-brand-color;
   border-radius: 4px;
   padding: em(20);
-
+  @media (max-width: 600px) {
+    margin: em(10);
+  }
 }
 .hentry {
   margin: em(80) 0 1.5em;

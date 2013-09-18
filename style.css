@@ -2304,14 +2304,18 @@ img:hover {
     text-decoration: none;
     font-family: 'Montserrat';
     font-size: 3.125em; }
-    /* line 104, sass/_typography.scss */
+    @media (max-width: 600px) {
+      /* line 101, sass/_typography.scss */
+      .site-title a {
+        font-size: 1.25em; } }
+    /* line 107, sass/_typography.scss */
     .site-title a:hover {
       border-bottom: none; }
-    /* line 107, sass/_typography.scss */
+    /* line 110, sass/_typography.scss */
     .site-title a:visited {
       color: black; }
 
-/* line 112, sass/_typography.scss */
+/* line 115, sass/_typography.scss */
 .site-description {
   font-family: 'Droid Serif';
   font-size: 1.125em;
@@ -2319,7 +2323,7 @@ img:hover {
   color: #7b8a90;
   font-style: italic; }
 
-/* line 118, sass/_typography.scss */
+/* line 121, sass/_typography.scss */
 .entry-title {
   text-transform: uppercase;
   text-decoration: none;
@@ -2327,32 +2331,32 @@ img:hover {
   word-wrap: break-word;
   font-family: 'Montserrat';
   color: black; }
-  /* line 124, sass/_typography.scss */
+  /* line 127, sass/_typography.scss */
   .entry-title a {
     font-family: 'Montserrat';
     color: black;
     text-decoration: none;
     color: black; }
-    /* line 128, sass/_typography.scss */
+    /* line 131, sass/_typography.scss */
     .entry-title a:visited {
       color: black; }
-    /* line 131, sass/_typography.scss */
+    /* line 134, sass/_typography.scss */
     .entry-title a:hover {
       color: #7b8a90; }
 
-/* line 136, sass/_typography.scss */
+/* line 139, sass/_typography.scss */
 .entry-content p {
   line-height: 2;
   -ms-word-wrap: break-word;
   word-wrap: break-word; }
 
-/* line 142, sass/_typography.scss */
+/* line 145, sass/_typography.scss */
 .entry-meta p, .entry-meta a, .entry-meta span {
   font-family: 'Montserrat';
   font-size: 0.875em;
   color: #7b8a90; }
 
-/* line 145, sass/_typography.scss */
+/* line 148, sass/_typography.scss */
 blockquote {
   font-family: 'Montserrat';
   font-size: 0.875em;
@@ -2366,7 +2370,7 @@ blockquote {
   border-left: 5px solid black;
   background: #d9b54b;
   text-align: center; }
-  /* line 156, sass/_typography.scss */
+  /* line 159, sass/_typography.scss */
   blockquote p {
     font-family: 'Montserrat';
     font-size: 0.875em;
@@ -2374,63 +2378,63 @@ blockquote {
     font-size: 1.125em;
     color: black; }
 
-/* line 163, sass/_typography.scss */
+/* line 166, sass/_typography.scss */
 blockquote cite {
   color: #7b8a90;
   font-size: 14px;
   display: block;
   margin-top: 5px; }
 
-/* line 170, sass/_typography.scss */
+/* line 173, sass/_typography.scss */
 blockquote cite:before {
   content: "\2014 \2009"; }
 
-/* line 173, sass/_typography.scss */
+/* line 176, sass/_typography.scss */
 table {
   padding: 0.625em; }
-  /* line 175, sass/_typography.scss */
+  /* line 178, sass/_typography.scss */
   table thead {
     background-color: #7b8a90; }
-    /* line 177, sass/_typography.scss */
+    /* line 180, sass/_typography.scss */
     table thead th {
       padding: 0.3125em; }
-  /* line 181, sass/_typography.scss */
+  /* line 184, sass/_typography.scss */
   table td {
     border-bottom: 1px solid #7b8a90;
     border-left: 1px solid #7b8a90;
     padding: 0.625em; }
-    /* line 185, sass/_typography.scss */
+    /* line 188, sass/_typography.scss */
     table td:last-child {
       border-right: 1px solid #7b8a90; }
 
-/* line 191, sass/_typography.scss */
+/* line 194, sass/_typography.scss */
 dl, dt, dd {
   font-family: 'Droid Serif';
   font-size: 1.125em; }
 
-/* line 194, sass/_typography.scss */
+/* line 197, sass/_typography.scss */
 dd {
   font-style: italic; }
 
-/* line 197, sass/_typography.scss */
+/* line 200, sass/_typography.scss */
 ol ol li, ul ul li {
   font-size: 1em; }
 
-/* line 200, sass/_typography.scss */
+/* line 203, sass/_typography.scss */
 li, li span {
   font-family: 'Droid Serif';
   font-size: 1.125em; }
 
-/* line 203, sass/_typography.scss */
+/* line 206, sass/_typography.scss */
 address {
   font-style: italic; }
 
-/* line 206, sass/_typography.scss */
+/* line 209, sass/_typography.scss */
 code, kbd, tt, var {
   background-color: #eeeeee;
   padding: 0.3125em; }
 
-/* line 219, sass/_typography.scss */
+/* line 222, sass/_typography.scss */
 a.icon-twitter,
 a.icon-facebook,
 a.icon-google-plus-sign,
@@ -2440,7 +2444,7 @@ a.icon-youtube-play,
 a.icon-linkedin-sign,
 a.icon-pinterest-sign {
   color: black; }
-  /* line 221, sass/_typography.scss */
+  /* line 224, sass/_typography.scss */
   a.icon-twitter:visited,
   a.icon-facebook:visited,
   a.icon-google-plus-sign:visited,
@@ -2451,42 +2455,42 @@ a.icon-pinterest-sign {
   a.icon-pinterest-sign:visited {
     color: black; }
 
-/* line 225, sass/_typography.scss */
+/* line 228, sass/_typography.scss */
 a.icon-twitter:hover {
   color: #00acee;
   border-bottom: none; }
 
-/* line 229, sass/_typography.scss */
+/* line 232, sass/_typography.scss */
 a.icon-facebook:hover {
   color: #3b5998;
   border-bottom: none; }
 
-/* line 233, sass/_typography.scss */
+/* line 236, sass/_typography.scss */
 a.icon-google-plus-sign:hover {
   color: #dd4b39;
   border-bottom: none; }
 
-/* line 237, sass/_typography.scss */
+/* line 240, sass/_typography.scss */
 a.icon-instagram:hover {
   color: #3f729b;
   border-bottom: none; }
 
-/* line 241, sass/_typography.scss */
+/* line 244, sass/_typography.scss */
 a.icon-github:hover {
   color: #171515;
   border-bottom: none; }
 
-/* line 245, sass/_typography.scss */
+/* line 248, sass/_typography.scss */
 a.icon-youtube-play:hover {
   color: #c4302b;
   border-bottom: none; }
 
-/* line 249, sass/_typography.scss */
+/* line 252, sass/_typography.scss */
 a.icon-linkedin-sign:hover {
   color: #0e76a8;
   border-bottom: none; }
 
-/* line 253, sass/_typography.scss */
+/* line 256, sass/_typography.scss */
 a.icon-pinterest-sign:hover {
   color: #c8232c;
   border-bottom: none; }
@@ -2635,11 +2639,11 @@ nav.primary a {
   max-width: 60em;
   margin-left: auto;
   margin-right: auto; }
-  /* line 18, ../../../../../../../Users/wesleycole/Treebook-App/CodeKit.app/Contents/Resources/engines/bourbon/bourbon/app/assets/stylesheets/addons/_clearfix.scss */
+  /* line 18, ../../../../../../CodeKit.app/Contents/Resources/engines/bourbon/bourbon/app/assets/stylesheets/addons/_clearfix.scss */
   #main:before, #main:after {
     content: " ";
     display: table; }
-  /* line 23, ../../../../../../../Users/wesleycole/Treebook-App/CodeKit.app/Contents/Resources/engines/bourbon/bourbon/app/assets/stylesheets/addons/_clearfix.scss */
+  /* line 23, ../../../../../../CodeKit.app/Contents/Resources/engines/bourbon/bourbon/app/assets/stylesheets/addons/_clearfix.scss */
   #main:after {
     clear: both; }
 
@@ -2656,11 +2660,11 @@ nav.primary a {
   margin-right: auto;
   max-width: 50em;
   border-bottom: 1px solid #cccccc; }
-  /* line 18, ../../../../../../../Users/wesleycole/Treebook-App/CodeKit.app/Contents/Resources/engines/bourbon/bourbon/app/assets/stylesheets/addons/_clearfix.scss */
+  /* line 18, ../../../../../../CodeKit.app/Contents/Resources/engines/bourbon/bourbon/app/assets/stylesheets/addons/_clearfix.scss */
   #content:before, #content:after {
     content: " ";
     display: table; }
-  /* line 23, ../../../../../../../Users/wesleycole/Treebook-App/CodeKit.app/Contents/Resources/engines/bourbon/bourbon/app/assets/stylesheets/addons/_clearfix.scss */
+  /* line 23, ../../../../../../CodeKit.app/Contents/Resources/engines/bourbon/bourbon/app/assets/stylesheets/addons/_clearfix.scss */
   #content:after {
     clear: both; }
   /* line 14, sass/_content.scss */
@@ -2681,71 +2685,75 @@ nav.primary a {
   border-left: 5px solid #d9b54b;
   border-radius: 4px;
   padding: 1.25em; }
+  @media (max-width: 600px) {
+    /* line 20, sass/_content.scss */
+    .sticky {
+      margin: 0.625em; } }
 
-/* line 27, sass/_content.scss */
+/* line 29, sass/_content.scss */
 .hentry {
   margin: 5em 0 1.5em;
   padding: 1.25em;
   background: white;
   border-bottom: 1px solid #ccc; }
-  /* line 32, sass/_content.scss */
+  /* line 34, sass/_content.scss */
   .hentry:last-child {
     border-bottom: none; }
 
-/* line 37, sass/_content.scss */
+/* line 39, sass/_content.scss */
 .entry-header .wp-post-image {
   display: inline-block;
   margin: 0 0.625em 0 0;
   width: 6.25em;
   border-radius: 50%;
   float: left; }
-/* line 44, sass/_content.scss */
+/* line 46, sass/_content.scss */
 .entry-header .entry-title {
   display: inline-block;
   margin-top: 10px; }
-/* line 48, sass/_content.scss */
+/* line 50, sass/_content.scss */
 .entry-header .meta span {
   margin-right: 0.625em;
   font-family: 'Montserrat';
   font-size: 0.875em;
   color: #7b8a90; }
 
-/* line 53, sass/_content.scss */
+/* line 55, sass/_content.scss */
 .entry-content {
   margin-top: 2.5em; }
 
-/* line 57, sass/_content.scss */
+/* line 59, sass/_content.scss */
 .byline,
 .updated {
   display: none; }
 
-/* line 61, sass/_content.scss */
+/* line 63, sass/_content.scss */
 .single .byline,
 .group-blog .byline {
   display: inline; }
 
-/* line 64, sass/_content.scss */
+/* line 66, sass/_content.scss */
 .page-links {
   clear: both;
   margin: 0 0 1.5em; }
 
-/* line 68, sass/_content.scss */
+/* line 70, sass/_content.scss */
 .entry-meta {
   border-top: 1px solid #eeeeee;
   padding-top: 1.25em; }
-  /* line 71, sass/_content.scss */
+  /* line 73, sass/_content.scss */
   .entry-meta .comments-link {
     float: right; }
 
-/* line 75, sass/_content.scss */
+/* line 77, sass/_content.scss */
 .tag .page-title {
   display: inline;
   border-left: 5px solid #d9b54b; }
 
-/* line 80, sass/_content.scss */
+/* line 82, sass/_content.scss */
 #nav-below .nav-previous, #nav-below .nav-next {
   padding: 0.625em 0 0.625em 0; }
-/* line 83, sass/_content.scss */
+/* line 85, sass/_content.scss */
 #nav-below .nav-previous a, #nav-below .nav-next a {
   border-right: none;
   background: #d9b54b;
@@ -2947,10 +2955,10 @@ object {
   .home_widget:last-child {
     margin-right: 0; }
   /* line 70, sass/neat/grid/_omega.scss */
-  .home_widget:nth-child(4n) {
+  .home_widget:nth-child(3n) {
     margin-right: 0; }
   /* line 75, sass/neat/grid/_omega.scss */
-  .home_widget:nth-child(4n+1) {
+  .home_widget:nth-child(3n+1) {
     clear: left; }
 
 /* line 11, sass/_widgets.scss */

@@ -5,7 +5,7 @@
 }
 .home_widget {
   @include span-columns(4);
-  @include omega(4n);
+  @include omega(3n);
   padding: em(10);
 }
 #secondary {
