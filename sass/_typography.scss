@@ -28,7 +28,7 @@
 
 @mixin copy-text {
   font: {
-    family: 'Droid Serif';
+    family: 'Droid', serif;
     size: em(18);
   }
 }
