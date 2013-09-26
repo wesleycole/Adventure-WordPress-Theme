@@ -10,19 +10,11 @@ function adventure_theme_menu() {
     'Adventure Theme',          
     'Adventure Theme',          
     'administrator',          
-    'adventure_theme_options',      
-    'adventure_theme_display'       
-  );
-
-  add_menu_page(
-    'Adventure Theme',          
-    'Adventure Theme',          
-    'administrator',          
     'adventure_theme_menu',        
     'adventure_theme_display'       
   );
 
-  add_submenu_page(
+  add_theme_page(
     'adventure_theme_menu',       
     __( 'General Options', 'adventure' ),     
     __( 'General Options', 'adventure' ),         
@@ -31,7 +23,7 @@ function adventure_theme_menu() {
     'adventure_theme_display'       
   );
 
-  add_submenu_page(
+  add_theme_page(
     'adventure_theme_menu',
     __( 'Social Options', 'adventure' ),
     __( 'Social Options', 'adventure' ),
