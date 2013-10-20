@@ -13,39 +13,39 @@
 	<?php } // if ( ! empty( $header_image ) ) ?>
 
  *
- * @package adventure
+ * @package flyleaf
  */
 
 /**
  * Setup the WordPress core custom header feature.
  *
- * @uses adventure_header_style()
- * @uses adventure_admin_header_style()
- * @uses adventure_admin_header_image()
+ * @uses flyleaf_header_style()
+ * @uses flyleaf_admin_header_style()
+ * @uses flyleaf_admin_header_image()
  *
- * @package adventure
+ * @package flyleaf
  */
-function adventure_custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( 'adventure_custom_header_args', array(
+function flyleaf_custom_header_setup() {
+	add_theme_support( 'custom-header', apply_filters( 'flyleaf_custom_header_args', array(
 		'default-image' 				 => get_template_directory_uri() . '/images/logo.png',
 		'default-text-color'     => '000',
 		'width'                  => 1000,
 		'height'                 => 250,
 		'flex-height'            => true,
-		'wp-head-callback'       => 'adventure_header_style',
-		'admin-head-callback'    => 'adventure_admin_header_style',
-		'admin-preview-callback' => 'adventure_admin_header_image',
+		'wp-head-callback'       => 'flyleaf_header_style',
+		'admin-head-callback'    => 'flyleaf_admin_header_style',
+		'admin-preview-callback' => 'flyleaf_admin_header_image',
 	) ) );
 }
-add_action( 'after_setup_theme', 'adventure_custom_header_setup' );
+add_action( 'after_setup_theme', 'flyleaf_custom_header_setup' );
 
-if ( ! function_exists( 'adventure_header_style' ) ) :
+if ( ! function_exists( 'flyleaf_header_style' ) ) :
 /**
  * Styles the header image and text displayed on the blog
  *
- * @see adventure_custom_header_setup().
+ * @see flyleaf_custom_header_setup().
  */
-function adventure_header_style() {
+function flyleaf_header_style() {
 	$header_text_color = get_header_textcolor();
 
 	// If no custom options for text are set, let's bail
@@ -77,15 +77,15 @@ function adventure_header_style() {
 	</style>
 	<?php
 }
-endif; // adventure_header_style
+endif; // flyleaf_header_style
 
-if ( ! function_exists( 'adventure_admin_header_style' ) ) :
+if ( ! function_exists( 'flyleaf_admin_header_style' ) ) :
 /**
  * Styles the header image displayed on the Appearance > Header admin panel.
  *
- * @see adventure_custom_header_setup().
+ * @see flyleaf_custom_header_setup().
  */
-function adventure_admin_header_style() {
+function flyleaf_admin_header_style() {
 ?>
 	<style type="text/css">
 		.appearance_page_custom-header #headimg {
@@ -105,15 +105,15 @@ function adventure_admin_header_style() {
 	</style>
 <?php
 }
-endif; // adventure_admin_header_style
+endif; // flyleaf_admin_header_style
 
-if ( ! function_exists( 'adventure_admin_header_image' ) ) :
+if ( ! function_exists( 'flyleaf_admin_header_image' ) ) :
 /**
  * Custom header image markup displayed on the Appearance > Header admin panel.
  *
- * @see adventure_custom_header_setup().
+ * @see flyleaf_custom_header_setup().
  */
-function adventure_admin_header_image() {
+function flyleaf_admin_header_image() {
 	$style        = sprintf( ' style="color:#%s;"', get_header_textcolor() );
 	$header_image = get_header_image();
 ?>
@@ -126,4 +126,4 @@ function adventure_admin_header_image() {
 	</div>
 <?php
 }
-endif; // adventure_admin_header_image
+endif; // flyleaf_admin_header_image

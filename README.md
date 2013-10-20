@@ -20,3 +20,16 @@ To install your theme, you will need to make sure to download the theme files fr
 If you don't have WordPress installed on a server yet, please make sure to check out the following tutorials. 
 
 [Installing WordPress](http://codex.wordpress.org/Installing_WordPress)
+
+### Menus
+
+FlyLeaf uses the main WordPress menu features to add menus to your theme. Your menu will appear in the slide out automatically. FlyLeaf only offers one primary menu for the slide out display. 
+
+To add a menu, follow these instructions. 
+
+[Adding a Menu](http://codex.wordpress.org/WordPress_Menu_User_Guide)
+
+### Footer Widgets 
+FlyLeaf allows you to add 3 widgets per row in the footer. 
+
+[Adding Widgets](http://codex.wordpress.org/WordPress_Widgets)

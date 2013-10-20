@@ -4,7 +4,7 @@
  *
  * Displays all of the <head> section and everything up till <main id="main">
  *
- * @package adventure
+ * @package flyleaf
  */
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -35,7 +35,7 @@
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 			<nav class="social">
-				<?php $social_options = get_option ( 'adventure_theme_social_options' ); ?>
+				<?php $social_options = get_option ( 'flyleaf_theme_social_options' ); ?>
 					<?php echo $social_options['twitter'] ? '<a href="' . esc_url( $social_options['twitter'] ) . '"<i class="icon-twitter icon-large"></i></a>' : ''; ?>
 					<?php echo $social_options['facebook'] ? '<a href="' . esc_url( $social_options['facebook'] ) . '"<i class="icon-facebook icon-large"></i></a>' : ''; ?>
 					<?php echo $social_options['googleplus'] ? '<a href="' . esc_url( $social_options['googleplus'] ) . '"<i class="icon-google-plus-sign icon-large"></i></a>' : ''; ?>

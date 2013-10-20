@@ -1,8 +1,8 @@
 <?php
 /**
- * adventure Theme Customizer
+ * flyleaf Theme Customizer
  *
- * @package adventure
+ * @package flyleaf
  */
 
 /**
@@ -10,17 +10,17 @@
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
-function adventure_customize_register( $wp_customize ) {
+function flyleaf_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 }
-add_action( 'customize_register', 'adventure_customize_register' );
+add_action( 'customize_register', 'flyleaf_customize_register' );
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
-function adventure_customize_preview_js() {
-	wp_enqueue_script( 'adventure_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20130508', true );
+function flyleaf_customize_preview_js() {
+	wp_enqueue_script( 'flyleaf_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20130508', true );
 }
-add_action( 'customize_preview_init', 'adventure_customize_preview_js' );
+add_action( 'customize_preview_init', 'flyleaf_customize_preview_js' );

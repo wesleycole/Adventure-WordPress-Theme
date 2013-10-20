@@ -1,8 +1,8 @@
 <?php
 /**
- * adventure functions and definitions
+ * flyleaf functions and definitions
  *
- * @package adventure
+ * @package flyleaf
  */
 
 /**
@@ -11,7 +11,7 @@
 if ( ! isset( $content_width ) )
 	$content_width = 640; /* pixels */
 
-if ( ! function_exists( 'adventure_setup' ) ) :
+if ( ! function_exists( 'flyleaf_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -19,15 +19,15 @@ if ( ! function_exists( 'adventure_setup' ) ) :
  * before the init hook. The init hook is too late for some features, such as indicating
  * support post thumbnails.
  */
-function adventure_setup() {
+function flyleaf_setup() {
 
 	/**
 	 * Make theme available for translation
 	 * Translations can be filed in the /languages/ directory
-	 * If you're building a theme based on adventure, use a find and replace
-	 * to change 'adventure' to the name of your theme in all the template files
+	 * If you're building a theme based on flyleaf, use a find and replace
+	 * to change 'flyleaf' to the name of your theme in all the template files
 	 */
-	load_theme_textdomain( 'adventure', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'flyleaf', get_template_directory() . '/languages' );
 
 	/**
 	 * Add default posts and comments RSS feed links to head
@@ -45,7 +45,7 @@ function adventure_setup() {
 	 * This theme uses wp_nav_menu() in one location.
 	 */
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'adventure' ),
+		'primary' => __( 'Primary Menu', 'flyleaf' ),
 	) );
 
 	/**
@@ -56,13 +56,13 @@ function adventure_setup() {
 	/**
 	 * Setup the WordPress core custom background feature.
 	 */
-	add_theme_support( 'custom-background', apply_filters( 'adventure_custom_background_args', array(
+	add_theme_support( 'custom-background', apply_filters( 'flyleaf_custom_background_args', array(
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
 }
-endif; // adventure_setup
-add_action( 'after_setup_theme', 'adventure_setup' );
+endif; // flyleaf_setup
+add_action( 'after_setup_theme', 'flyleaf_setup' );
 
 
 
@@ -77,16 +77,16 @@ function my_jquery_enqueue() {
    wp_enqueue_script('jquery', '', '', array(), '20130819', true );
 }
 
-function adventure_scripts() {
-	wp_enqueue_style( 'adventure-style', get_stylesheet_uri() );
+function flyleaf_scripts() {
+	wp_enqueue_style( 'flyleaf-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'adventure-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+	wp_enqueue_script( 'flyleaf-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
-	wp_enqueue_script( 'adventure-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	wp_enqueue_script( 'flyleaf-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 	
-	wp_enqueue_script( 'adventure_jqslide', get_template_directory_uri() . '/js/jquery.pageslide.min.js', array( 'jquery' ), '20130817', true );
+	wp_enqueue_script( 'flyleaf_jqslide', get_template_directory_uri() . '/js/jquery.pageslide.min.js', array( 'jquery' ), '20130817', true );
 
-	wp_enqueue_script( 'adventure_main', get_template_directory_uri() . '/js/main.js', array( 'jquery' ), '20130817', true );
+	wp_enqueue_script( 'flyleaf_main', get_template_directory_uri() . '/js/main.js', array( 'jquery' ), '20130817', true );
 	
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -94,10 +94,10 @@ function adventure_scripts() {
 	}
 
 	if ( is_singular() && wp_attachment_is_image() ) {
-		wp_enqueue_script( 'adventure-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
+		wp_enqueue_script( 'flyleaf-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'adventure_scripts' );
+add_action( 'wp_enqueue_scripts', 'flyleaf_scripts' );
 
 function add_pageslide_script() {?>
 	<script>
@@ -134,10 +134,10 @@ class Arrow_Walker_Nav_Menu extends Walker_Nav_Menu {
     }
 }
 
-add_action('wp_head', 'adventure_add_ga_tracking');
+add_action('wp_head', 'flyleaf_add_ga_tracking');
 
-function adventure_add_ga_tracking() { 
-  $general_options = get_option ( 'adventure_theme_general_options' );
+function flyleaf_add_ga_tracking() { 
+  $general_options = get_option ( 'flyleaf_theme_general_options' );
   $propertyID = $general_options['google_analytics'];
   ?>
   <script>

@@ -2,50 +2,50 @@
 
 /**
  * This function introduces the theme options into the 'Appearance' menu and into a top-level 
- * 'Adventure Theme' menu.
+ * 'flyleaf Theme' menu.
  */
-function adventure_theme_menu() {
+function flyleaf_theme_menu() {
 
   add_theme_page(
-    'Adventure Theme',          
-    'Adventure Theme',          
+    'flyleaf Theme',          
+    'flyleaf Theme',          
     'administrator',          
-    'adventure_theme_menu',        
-    'adventure_theme_display'       
+    'flyleaf_theme_menu',        
+    'flyleaf_theme_display'       
   );
 
   add_theme_page(
-    'adventure_theme_menu',       
-    __( 'General Options', 'adventure' ),     
-    __( 'General Options', 'adventure' ),         
+    'flyleaf_theme_menu',       
+    __( 'General Options', 'flyleaf' ),     
+    __( 'General Options', 'flyleaf' ),         
     'administrator',          
-    'adventure_theme_general_options',  
-    'adventure_theme_display'       
+    'flyleaf_theme_general_options',  
+    'flyleaf_theme_display'       
   );
 
   add_theme_page(
-    'adventure_theme_menu',
-    __( 'Social Options', 'adventure' ),
-    __( 'Social Options', 'adventure' ),
+    'flyleaf_theme_menu',
+    __( 'Social Options', 'flyleaf' ),
+    __( 'Social Options', 'flyleaf' ),
     'administrator',
-    'adventure_theme_social_options',
-    create_function( null, 'adventure_theme_display( "social_options" );' )
+    'flyleaf_theme_social_options',
+    create_function( null, 'flyleaf_theme_display( "social_options" );' )
   );
 
-} // end adventure_example_theme_menu
-add_action( 'admin_menu', 'adventure_theme_menu' );
+} // end flyleaf_example_theme_menu
+add_action( 'admin_menu', 'flyleaf_theme_menu' );
 
 /**
  * Displays the menu page.
  */
 
-function adventure_theme_display( $active_tab = '' ) {
+function flyleaf_theme_display( $active_tab = '' ) {
 ?>
   <!-- Create a header in the default WordPress 'wrap' container -->
   <div class="wrap">
   
     <div id="icon-themes" class="icon32"></div>
-    <h2><?php _e( 'Adventure Theme Options', 'adventure' ); ?></h2>
+    <h2><?php _e( 'flyleaf Theme Options', 'flyleaf' ); ?></h2>
     <?php settings_errors(); ?>
     
     <?php if( isset( $_GET[ 'tab' ] ) ) {
@@ -57,8 +57,8 @@ function adventure_theme_display( $active_tab = '' ) {
     } // end if/else ?>
 
     <h2 class="nav-tab-wrapper">
-      <a href="?page=adventure_theme_options&tab=general_options" class="nav-tab <?php echo $active_tab == 'general_options' ? 'nav-tab-active' : ''; ?>"><?php _e( 'General Options', 'adventure' ); ?></a>
-      <a href="?page=adventure_theme_options&tab=social_options" class="nav-tab <?php echo $active_tab == 'social_options' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Social Options', 'adventure' ); ?></a>
+      <a href="?page=flyleaf_theme_options&tab=general_options" class="nav-tab <?php echo $active_tab == 'general_options' ? 'nav-tab-active' : ''; ?>"><?php _e( 'General Options', 'flyleaf' ); ?></a>
+      <a href="?page=flyleaf_theme_options&tab=social_options" class="nav-tab <?php echo $active_tab == 'social_options' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Social Options', 'flyleaf' ); ?></a>
     </h2>
     
     <form method="post" action="options.php">
@@ -66,13 +66,13 @@ function adventure_theme_display( $active_tab = '' ) {
 
         if( $active_tab == 'general_options' ) {
 
-          settings_fields( 'adventure_theme_general_options' );
-          do_settings_sections( 'adventure_theme_general_options' );
+          settings_fields( 'flyleaf_theme_general_options' );
+          do_settings_sections( 'flyleaf_theme_general_options' );
 
         } else {
 
-          settings_fields( 'adventure_theme_social_options' );
-          do_settings_sections( 'adventure_theme_social_options' );
+          settings_fields( 'flyleaf_theme_social_options' );
+          do_settings_sections( 'flyleaf_theme_social_options' );
 
         } // end if/else
 
@@ -83,7 +83,7 @@ function adventure_theme_display( $active_tab = '' ) {
     
   </div><!-- /.wrap -->
 <?php
-} // end adventure_theme_display
+} // end flyleaf_theme_display
 
 /* ------------------------------------------------------------------------ *
  * Setting Registration
@@ -92,7 +92,7 @@ function adventure_theme_display( $active_tab = '' ) {
 
 // Default Values 
 
-function adventure_theme_default_social_options() {
+function flyleaf_theme_default_social_options() {
 
   $defaults = array(
     'twitter'   =>  '',
@@ -105,202 +105,202 @@ function adventure_theme_default_social_options() {
     'linkedin' => '',
   );
 
-  return apply_filters( 'adventure_theme_default_social_options', $defaults );
+  return apply_filters( 'flyleaf_theme_default_social_options', $defaults );
 
-} // end adventure_theme_default_social_options
+} // end flyleaf_theme_default_social_options
 
 
-function adventure_theme_default_general_options() {
+function flyleaf_theme_default_general_options() {
 
   $defaults = array(
     'google_analytics'   =>  '',
     'show_footer_copyright'   =>  '',
   );
 
-  return apply_filters( 'adventure_theme_default_general_options', $defaults );
+  return apply_filters( 'flyleaf_theme_default_general_options', $defaults );
 
-} // end adventure_theme_default_general_options
+} // end flyleaf_theme_default_general_options
 
 
 /**
  * Registering the general options. 
  */ 
-function adventure_initialize_theme_options() {
+function flyleaf_initialize_theme_options() {
 
   // If the theme options don't exist, create them.
-  if( false == get_option( 'adventure_theme_general_options' ) ) {  
-    add_option( 'adventure_theme_general_options', apply_filters( 'adventure_theme_default_general_options', adventure_theme_default_general_options() ) );
+  if( false == get_option( 'flyleaf_theme_general_options' ) ) {  
+    add_option( 'flyleaf_theme_general_options', apply_filters( 'flyleaf_theme_default_general_options', flyleaf_theme_default_general_options() ) );
   } // end if
 
   add_settings_section(
     'general_settings_section',     
-    __( 'General Options', 'adventure' ),   
-    'adventure_general_options_callback', 
-    'adventure_theme_general_options'   
+    __( 'General Options', 'flyleaf' ),   
+    'flyleaf_general_options_callback', 
+    'flyleaf_theme_general_options'   
   );
 
   add_settings_field(
     'google_analytics',
-    __( 'Google Analytics ID', 'adventure' ),
-    'adventure_google_analytics_callback',
-    'adventure_theme_general_options',
+    __( 'Google Analytics ID', 'flyleaf' ),
+    'flyleaf_google_analytics_callback',
+    'flyleaf_theme_general_options',
     'general_settings_section',
     array (
-      __( 'Add your Google Analytics ID to start tracking visits to your site.', 'adventure' ),
+      __( 'Add your Google Analytics ID to start tracking visits to your site.', 'flyleaf' ),
     )
   );
 
   add_settings_field( 
     'show_footer_copyright',            
-    __( 'Footer Copyright Information', 'adventure' ),        
-    'adventure_footer_copyright_callback', 
-    'adventure_theme_general_options',    
+    __( 'Footer Copyright Information', 'flyleaf' ),        
+    'flyleaf_footer_copyright_callback', 
+    'flyleaf_theme_general_options',    
     'general_settings_section',     
     array(                
-      __( 'Edit the text below to show your own copyright information on the site.', 'adventure' ),
+      __( 'Edit the text below to show your own copyright information on the site.', 'flyleaf' ),
     )
   );
 
   register_setting(
-    'adventure_theme_general_options',
-    'adventure_theme_general_options',
-    'adventure_theme_validate_general_options'
+    'flyleaf_theme_general_options',
+    'flyleaf_theme_general_options',
+    'flyleaf_theme_validate_general_options'
   );
 
-} // end adventure_initialize_theme_options
+} // end flyleaf_initialize_theme_options
 
-add_action( 'admin_init', 'adventure_initialize_theme_options' );
+add_action( 'admin_init', 'flyleaf_initialize_theme_options' );
 
 /**
  * Registering the social options for the theme. 
  */ 
 
-function adventure_theme_intialize_social_options() {
+function flyleaf_theme_intialize_social_options() {
 
-  if( false == get_option( 'adventure_theme_social_options' ) ) { 
-    add_option( 'adventure_theme_social_options', apply_filters( 'adventure_theme_default_social_options', adventure_theme_default_social_options() ) );
+  if( false == get_option( 'flyleaf_theme_social_options' ) ) { 
+    add_option( 'flyleaf_theme_social_options', apply_filters( 'flyleaf_theme_default_social_options', flyleaf_theme_default_social_options() ) );
   } // end if
 
   add_settings_section(
     'social_settings_section',      
-    __( 'Social Options', 'adventure' ),    
-    'adventure_social_options_callback',  
-    'adventure_theme_social_options'    
+    __( 'Social Options', 'flyleaf' ),    
+    'flyleaf_social_options_callback',  
+    'flyleaf_theme_social_options'    
   );
 
   add_settings_field( 
     'twitter',            
     'Twitter',              
-    'adventure_twitter_callback', 
-    'adventure_theme_social_options', 
+    'flyleaf_twitter_callback', 
+    'flyleaf_theme_social_options', 
     'social_settings_section'     
   );
 
   add_settings_field( 
     'facebook',           
     'Facebook',             
-    'adventure_facebook_callback',  
-    'adventure_theme_social_options', 
+    'flyleaf_facebook_callback',  
+    'flyleaf_theme_social_options', 
     'social_settings_section'     
   );
 
   add_settings_field(
     'instagram',
     'Instagram', 
-    'adventure_instagram_callback',
-    'adventure_theme_social_options',
+    'flyleaf_instagram_callback',
+    'flyleaf_theme_social_options',
     'social_settings_section'
   );
 
   add_settings_field( 
     'googleplus',           
     'Google+',              
-    'adventure_googleplus_callback',  
-    'adventure_theme_social_options', 
+    'flyleaf_googleplus_callback',  
+    'flyleaf_theme_social_options', 
     'social_settings_section'     
   );
 
   add_settings_field(
     'github',
     'GitHub',
-    'adventure_github_callback',
-    'adventure_theme_social_options', 
+    'flyleaf_github_callback',
+    'flyleaf_theme_social_options', 
     'social_settings_section'
   );
 
   add_settings_field(
     'youtube',
     'YouTube',
-    'adventure_youtube_callback',
-    'adventure_theme_social_options',
+    'flyleaf_youtube_callback',
+    'flyleaf_theme_social_options',
     'social_settings_section'
   );
 
   add_settings_field(
     'pinterest', 
     'Pinterest', 
-    'adventure_pinterest_callback',
-    'adventure_theme_social_options',
+    'flyleaf_pinterest_callback',
+    'flyleaf_theme_social_options',
     'social_settings_section'
   );
 
   add_settings_field(
     'linkedin',
     'LinkedIn',
-    'adventure_linkedin_callback',
-    'adventure_theme_social_options',
+    'flyleaf_linkedin_callback',
+    'flyleaf_theme_social_options',
     'social_settings_section'
   );
 
   register_setting(
-    'adventure_theme_social_options',
-    'adventure_theme_social_options',
-    'adventure_theme_sanitize_social_options'
+    'flyleaf_theme_social_options',
+    'flyleaf_theme_social_options',
+    'flyleaf_theme_sanitize_social_options'
   );
 
-} // end adventure_theme_intialize_social_options
-add_action( 'admin_init', 'adventure_theme_intialize_social_options' );
+} // end flyleaf_theme_intialize_social_options
+add_action( 'admin_init', 'flyleaf_theme_intialize_social_options' );
 
 
 /* ------------------------------------------------------------------------ *
  * Section Callbacks
  * ------------------------------------------------------------------------ */ 
 
-function adventure_general_options_callback() {
-  echo '<p>' . __( 'Edit the following areas below to customize the general settings of this theme.', 'adventure' ) . '</p>';
-} // end adventure_general_options_callback
+function flyleaf_general_options_callback() {
+  echo '<p>' . __( 'Edit the following areas below to customize the general settings of this theme.', 'flyleaf' ) . '</p>';
+} // end flyleaf_general_options_callback
 
-function adventure_social_options_callback() {
-  echo '<p>' . __( 'Provide the URL to the social networks you\'d like to display or leave it blank if you do not want to show a network.', 'adventure' ) . '</p>';
-} // end adventure_general_options_callback
+function flyleaf_social_options_callback() {
+  echo '<p>' . __( 'Provide the URL to the social networks you\'d like to display or leave it blank if you do not want to show a network.', 'flyleaf' ) . '</p>';
+} // end flyleaf_general_options_callback
 
 /* ------------------------------------------------------------------------ *
  * Field Callbacks
  * ------------------------------------------------------------------------ */ 
 
 
-function adventure_google_analytics_callback() {
+function flyleaf_google_analytics_callback() {
 
-  $options = get_option( 'adventure_theme_general_options' );
-
-  // Render the output
-  echo '<input type="text" id="google_analytics" placeholder="UA-12345678-1" name="adventure_theme_general_options[google_analytics]" value="' . $options['google_analytics'] . '" />';
-
-} // end adventure_google_analytics_callback
-
-
-function adventure_footer_copyright_callback() {
-
-  $options = get_option( 'adventure_theme_general_options' );
+  $options = get_option( 'flyleaf_theme_general_options' );
 
   // Render the output
-  echo '<textarea id="textarea_example" placeholder="Enter your own copyright information here." name="adventure_theme_general_options[show_footer]" rows="5" cols="50">' . $options['show_footer'] . '</textarea>';
+  echo '<input type="text" id="google_analytics" placeholder="UA-12345678-1" name="flyleaf_theme_general_options[google_analytics]" value="' . $options['google_analytics'] . '" />';
+
+} // end flyleaf_google_analytics_callback
+
+
+function flyleaf_footer_copyright_callback() {
+
+  $options = get_option( 'flyleaf_theme_general_options' );
+
+  // Render the output
+  echo '<textarea id="textarea_example" placeholder="Enter your own copyright information here." name="flyleaf_theme_general_options[show_footer]" rows="5" cols="50">' . $options['show_footer'] . '</textarea>';
 
 }
 
-function adventure_twitter_callback() {
+function flyleaf_twitter_callback() {
 
-  $options = get_option( 'adventure_theme_social_options' );
+  $options = get_option( 'flyleaf_theme_social_options' );
 
   $url = '';
   if( isset( $options['twitter'] ) ) {
@@ -308,13 +308,13 @@ function adventure_twitter_callback() {
   } // end if
 
   // Render the output
-  echo '<input type="text" id="twitter" name="adventure_theme_social_options[twitter]" value="' . $url . '" />';
+  echo '<input type="text" id="twitter" name="flyleaf_theme_social_options[twitter]" value="' . $url . '" />';
 
-} // end adventure_twitter_callback
+} // end flyleaf_twitter_callback
 
-function adventure_facebook_callback() {
+function flyleaf_facebook_callback() {
 
-  $options = get_option( 'adventure_theme_social_options' );
+  $options = get_option( 'flyleaf_theme_social_options' );
 
   $url = '';
   if( isset( $options['facebook'] ) ) {
@@ -322,13 +322,13 @@ function adventure_facebook_callback() {
   } // end if
 
   // Render the output
-  echo '<input type="text" id="facebook" name="adventure_theme_social_options[facebook]" value="' . $url . '" />';
+  echo '<input type="text" id="facebook" name="flyleaf_theme_social_options[facebook]" value="' . $url . '" />';
 
-} // end adventure_facebook_callback
+} // end flyleaf_facebook_callback
 
-function adventure_instagram_callback() {
+function flyleaf_instagram_callback() {
 
-  $options = get_option( 'adventure_theme_social_options' );
+  $options = get_option( 'flyleaf_theme_social_options' );
 
   $url = '';
   if( isset( $options['instagram'] ) ) {
@@ -336,13 +336,13 @@ function adventure_instagram_callback() {
   } // end if
 
   // Render the output
-  echo '<input type="text" id="instagram" name="adventure_theme_social_options[instagram]" value="' . $url . '" />';
+  echo '<input type="text" id="instagram" name="flyleaf_theme_social_options[instagram]" value="' . $url . '" />';
 
-} // end adventure_instagram_callback
+} // end flyleaf_instagram_callback
 
-function adventure_googleplus_callback() {
+function flyleaf_googleplus_callback() {
 
-  $options = get_option( 'adventure_theme_social_options' );
+  $options = get_option( 'flyleaf_theme_social_options' );
 
   $url = '';
   if( isset( $options['googleplus'] ) ) {
@@ -350,13 +350,13 @@ function adventure_googleplus_callback() {
   } // end if
 
   // Render the output
-  echo '<input type="text" id="googleplus" name="adventure_theme_social_options[googleplus]" value="' . $url . '" />';
+  echo '<input type="text" id="googleplus" name="flyleaf_theme_social_options[googleplus]" value="' . $url . '" />';
 
-} // end adventure_github_callback
+} // end flyleaf_github_callback
 
-function adventure_github_callback() {
+function flyleaf_github_callback() {
 
-  $options = get_option( 'adventure_theme_social_options' );
+  $options = get_option( 'flyleaf_theme_social_options' );
 
   $url = '';
   if( isset( $options['github'] ) ) {
@@ -364,13 +364,13 @@ function adventure_github_callback() {
   } // end if
 
   // Render the output
-  echo '<input type="text" id="github" name="adventure_theme_social_options[github]" value="' . $url . '" />';
+  echo '<input type="text" id="github" name="flyleaf_theme_social_options[github]" value="' . $url . '" />';
 
-} // end adventure_github_callback
+} // end flyleaf_github_callback
 
-function adventure_youtube_callback() {
+function flyleaf_youtube_callback() {
 
-  $options = get_option( 'adventure_theme_social_options' );
+  $options = get_option( 'flyleaf_theme_social_options' );
 
   $url = '';
   if( isset( $options['youtube'] ) ) {
@@ -378,13 +378,13 @@ function adventure_youtube_callback() {
   } // end if
 
   // Render the output
-  echo '<input type="text" id="youtube" name="adventure_theme_social_options[youtube]" value="' . $url . '" />';
+  echo '<input type="text" id="youtube" name="flyleaf_theme_social_options[youtube]" value="' . $url . '" />';
 
-} // end adventure_youtube_callback
+} // end flyleaf_youtube_callback
 
-function adventure_pinterest_callback() {
+function flyleaf_pinterest_callback() {
 
-  $options = get_option( 'adventure_theme_social_options' );
+  $options = get_option( 'flyleaf_theme_social_options' );
 
   $url = '';
   if( isset( $options['pinterest'] ) ) {
@@ -392,13 +392,13 @@ function adventure_pinterest_callback() {
   } // end if
 
   // Render the output
-  echo '<input type="text" id="pinterest" name="adventure_theme_social_options[pinterest]" value="' . $url . '" />';
+  echo '<input type="text" id="pinterest" name="flyleaf_theme_social_options[pinterest]" value="' . $url . '" />';
 
-} // end adventure_pinterest_callback
+} // end flyleaf_pinterest_callback
 
-function adventure_linkedin_callback() {
+function flyleaf_linkedin_callback() {
 
-  $options = get_option( 'adventure_theme_social_options' );
+  $options = get_option( 'flyleaf_theme_social_options' );
 
   $url = '';
   if( isset( $options['linkedin'] ) ) {
@@ -406,16 +406,16 @@ function adventure_linkedin_callback() {
   } // end if
 
   // Render the output
-  echo '<input type="text" id="linkedin" name="adventure_theme_social_options[linkedin]" value="' . $url . '" />';
+  echo '<input type="text" id="linkedin" name="flyleaf_theme_social_options[linkedin]" value="' . $url . '" />';
 
-} // end adventure_linkedin_callback
+} // end flyleaf_linkedin_callback
 
 /* ------------------------------------------------------------------------ *
  * Setting Callbacks
  * ------------------------------------------------------------------------ */ 
  
 
-function adventure_theme_sanitize_social_options( $input ) {
+function flyleaf_theme_sanitize_social_options( $input ) {
 
   $output = array();
 
@@ -428,11 +428,11 @@ function adventure_theme_sanitize_social_options( $input ) {
   } // end foreach
 
   // Return the new collection
-  return apply_filters( 'adventure_theme_sanitize_social_options', $output, $input );
+  return apply_filters( 'flyleaf_theme_sanitize_social_options', $output, $input );
 
-} // end adventure_theme_sanitize_social_options
+} // end flyleaf_theme_sanitize_social_options
 
-function adventure_theme_validate_general_options( $input ) {
+function flyleaf_theme_validate_general_options( $input ) {
 
   $output = array();
 
@@ -446,8 +446,8 @@ function adventure_theme_validate_general_options( $input ) {
 
   } // end foreach
 
-  return apply_filters( 'adventure_theme_validate_general_options', $output, $input );
+  return apply_filters( 'flyleaf_theme_validate_general_options', $output, $input );
 
-} // end adventure_theme_validate_input_examples
+} // end flyleaf_theme_validate_input_examples
 
 ?>
