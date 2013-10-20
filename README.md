@@ -37,7 +37,7 @@ FlyLeaf allows you to add 3 widgets per row in the footer.
 ## RoadMap
 As we continue to work on FlyLeaf, we are going to keep this list updated with things that we would like to tackle and launch in the future. 
 
-[ ] Right To Left styles for multiple languages. 
-[ ] Post format styles for audio, video, link and more
-[ ] Ability to customize the colors through the WordPress Admin instead of through child themes. 
-[ ] Even more...
+- [ ] Right To Left styles for multiple languages. 
+- [ ] Post format styles for audio, video, link and more
+- [ ] Ability to customize the colors through the WordPress Admin instead of through child themes. 
+- [ ] Even more...
