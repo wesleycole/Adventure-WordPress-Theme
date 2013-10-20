@@ -11,11 +11,12 @@ Getting Started
 
  WordPress has already written great tutorials for a lot of features the FlyLeaf offers and thus we will be linking to those tutorials since they already cover them and we would like WordPress to be the central place to look when learning how to use and troubleshoot any WordPress theme. 
 
-  ### Installing
-  To install your theme, you will need to make sure to download the theme files from wherever you have purchased the theme. From there, follow the directions that WordPress offers to install a theme. 
+### Installing
 
-  [Installing a Theme](http://codex.wordpress.org/Using_Themes)
+To install your theme, you will need to make sure to download the theme files from wherever you have purchased the theme. From there, follow the directions that WordPress offers to install a theme. 
 
-  If you don't have WordPress installed on a server yet, please make sure to check out the following tutorials. 
+[Installing a Theme](http://codex.wordpress.org/Using_Themes)
 
-  [Installing WordPress](http://codex.wordpress.org/Installing_WordPress)
+If you don't have WordPress installed on a server yet, please make sure to check out the following tutorials. 
+
+[Installing WordPress](http://codex.wordpress.org/Installing_WordPress)
