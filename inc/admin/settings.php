@@ -45,7 +45,7 @@ function flyleaf_theme_display( $active_tab = '' ) {
   <div class="wrap">
   
     <div id="icon-themes" class="icon32"></div>
-    <h2><?php _e( 'flyleaf Theme Options', 'flyleaf' ); ?></h2>
+    <h2><?php _e( 'FlyLeaf Theme Options', 'flyleaf' ); ?></h2>
     <?php settings_errors(); ?>
     
     <?php if( isset( $_GET[ 'tab' ] ) ) {
