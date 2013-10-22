@@ -62,12 +62,6 @@
     @include meta-text;
     display: block;
   }
-  input, textarea {
-    border: none;
-    border-radius: 0;
-    background: $light-gray;
-    line-height: 2em;
-  }
 }
 .form-submit #submit {
   @include button;

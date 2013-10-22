@@ -13,6 +13,8 @@ textarea {
   line-height: 1.5;
 }
 
+
+
 /* Headings */
 h1,h2,h3,h4,h5,h6 {
   clear: both;
@@ -129,6 +131,7 @@ button,
 input {
   line-height: normal; /* Addresses FF3/4 setting line-height using !important in the UA stylesheet */
 }
+
 button,
 html input[type="button"],
 input[type="reset"],
@@ -189,16 +192,19 @@ input[type="email"],
 input[type="password"],
 input[type="search"],
 textarea {
-  color: #666;
-  border: 1px solid #ccc;
-  border-radius: 3px;
+  border: none;
+  border-radius: 0;
+  background: $light-gray;
+  line-height: 2em;
 }
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="password"]:focus,
 input[type="search"]:focus,
 textarea:focus {
-  color: #111;
+  color: $black;
+  border-radius: 0;
+  outline: $black solid 1px;
 }
 input[type="text"],
 input[type="email"],

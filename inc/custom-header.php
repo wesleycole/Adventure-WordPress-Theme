@@ -29,7 +29,7 @@ function flyleaf_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'flyleaf_custom_header_args', array(
 		'default-image' 				 => get_template_directory_uri() . '/images/logo.png',
 		'default-text-color'     => '000',
-		'width'                  => 1000,
+		'width'                  => 250,
 		'height'                 => 250,
 		'flex-height'            => true,
 		'wp-head-callback'       => 'flyleaf_header_style',

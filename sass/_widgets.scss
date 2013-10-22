@@ -7,6 +7,16 @@
   @include span-columns(4);
   @include omega(3n);
   padding: em(10);
+  h1 {
+    font-size: 1.5em;
+  }
+  ul {
+    list-style: none;
+    margin-left: 0;
+    li {
+      border-bottom: 1px solid $light-gray;
+    }
+  }
   @include media($mobile) { // As defined in _grid-settings.scss
       width: 100%;
       margin: em(10);
@@ -19,6 +29,7 @@
 }
 
 /* Search widget */
-.widget_search .search-submit {
+
+.home_widget .search-submit {
   display: none;
 }
